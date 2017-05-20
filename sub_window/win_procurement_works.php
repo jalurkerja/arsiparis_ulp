@@ -11,7 +11,7 @@
 	$_data = $db->fetch_data(true);
 ?>
 <script>
-	function parrent_adds_load(procurement_work_id,name,work_category,hps_nomor,hps_nominal,hps_ok_by,hps_ok_at,work_days,ppk_name,ppk_nip){
+	function parent_adds_load(procurement_work_id,name,work_category,hps_nomor,hps_nominal,hps_ok_by,hps_ok_at,work_days,ppk_name,ppk_nip){
 		parent.document.getElementById("<?=$_GET["name"];?>").value = procurement_work_id;
 		parent.document.getElementById("sw_caption_<?=$_GET["name"];?>").innerHTML = name;
 		parent.document.getElementById("work_category").innerHTML = work_category;
@@ -36,7 +36,7 @@ Search : <?=$f->input("keyword",$_POST["keyword"],"size='50'");?>&nbsp;<?=$f->in
 <?php 
 	foreach($_data as $no => $data){
 		$work_category = $db->fetch_single_data("work_categories","name",array("id" => $data["work_category_id"]));
-		$actions = "onclick=\"parrent_adds_load('".$data["id"]."'
+		$actions = "onclick=\"parent_adds_load('".$data["id"]."'
 												,'".$data["name"]."'
 												,'".$work_category."'
 												,'".$data["hps_nomor"]."'

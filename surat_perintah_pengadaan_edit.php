@@ -2,7 +2,7 @@
 <div class="bo_title">Ubah Surat Perintah Pengadaan Barang/Jasa</div>
 <script>
 	function download_file(surat_perintah_pengadaan_id){
-		if(confirm("Aplikasi ini hanya mengunduh beberapa Dokumen sekaligus. Lanjutkan?")){
+		if(confirm("Aplikasi ini akan mengunduh beberapa Dokumen sekaligus. Lanjutkan?")){
 			var arrpage = [1,2];
 			for (var i in arrpage) {
 				window.open("surat_perintah_pengadaan_view.php?surat_perintah_pengadaan_id=" + surat_perintah_pengadaan_id + "&page=" + arrpage[i]);
