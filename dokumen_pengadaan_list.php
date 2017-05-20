@@ -10,7 +10,7 @@
 		$db->addtable("dokumen_pengadaan_undangan");
 		$db->where("dokumen_pengadaan_id",$_GET["deleting"]);
 		$db->delete_();
-		?> <script> swindow.location="?";</script> <?php
+		?> <script> window.location="?";</script> <?php
 	}
 ?>
 <div class="bo_title">Dokumen Pengadaan</div>

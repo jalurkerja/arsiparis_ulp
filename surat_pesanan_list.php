@@ -4,7 +4,7 @@
 		$db->addtable("surat_pesanan");
 		$db->where("id",$_GET["deleting"]);
 		$db->delete_();
-		?> <script> swindow.location="?";</script> <?php
+		?> <script> window.location="?";</script> <?php
 	}
 ?>
 <div class="bo_title">Surat Pesanan</div>

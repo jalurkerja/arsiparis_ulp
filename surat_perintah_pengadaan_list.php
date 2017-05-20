@@ -7,7 +7,7 @@
 		$db->addtable("surat_perintah_pengadaan_detail");
 		$db->where("surat_perintah_pengadaan_id",$_GET["deleting"]);
 		$db->delete_();
-		?> <script> swindow.location="?";</script> <?php
+		?> <script> window.location="?";</script> <?php
 	}
 ?>
 <div class="bo_title">Surat Perintah Pengadaan Barang/Jasa</div>
