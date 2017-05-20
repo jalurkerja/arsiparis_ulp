@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body style="margin-left:100px; ">
+	<table width="650" style="font-size:14.5;font-family:Trebuchet MS;">
+			<tr>
+				<td>Lampiran Surat</td>
+			</tr>
+			<tr>
+				<td>Nomor</td><td>:</td><td>{nomor}</td>
+			</tr>
+			<tr>
+				<td>Lampiran</td><td>:</td><td>1 (satu)</td>
+			</tr>
+			<tr>
+				<td>Perihal</td><td>:</td><td>Perintah Pengadaan Barang/Jasa</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align:center"><br>DAFTAR PAKET PEKERJAAN</td>
+			</tr>
+	</table>
+	<table border="1" cellpadding = "20" rules="all" style="font-size:14.5;font-family:Trebuchet MS;" width="650">
+			<tr>
+				<td>NO.</td><td width="300px" style="text-align:center">NAMA BARANG</td><td>JUMLAH</td><td>SATUAN</td>
+			</tr>
+			{surat_perintah_pengadaan_details}
+	</table>
+	<table width="620" style="font-size:14.5;font-family:Trebuchet MS;">
+			<tr>
+				<td ><br><p style="text-align:right">Pejabat Pembuat Komitmen (PPK)<br>BP2IP Tangerang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br><br><br><br><u>{procurement_work_ppk_name}</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>NIP. {procurement_work_ppk_nip}&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+			</tr>
+	</table>
+</body>
+</html>
