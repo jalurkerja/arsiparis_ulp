@@ -199,8 +199,8 @@
 			$thn[$xx] = "dua ribu ".$tgl[(substr($xx,2,2) * 1)];
 		}
 		
-		if(!$isbold) return "tanggal ".ucfirst($tgl[substr($date,8,2)])." bulan ".ucfirst($bln[substr($date,5,2) * 1])." tahun ".ucfirst($thn[substr($date,0,4)]);
-		else return "tanggal <b>".ucfirst($tgl[substr($date,8,2)])."</b> bulan <b>".ucfirst($bln[substr($date,5,2) * 1])."</b> tahun <b>".ucfirst($thn[substr($date,0,4)])."</b>";
+		if(!$isbold) return "tanggal ".ucfirst($tgl[substr($date,8,2) * 1])." bulan ".ucfirst($bln[substr($date,5,2) * 1])." tahun ".ucfirst($thn[substr($date,0,4)]);
+		else return "tanggal <b>".ucfirst($tgl[substr($date,8,2) * 1])."</b> bulan <b>".ucfirst($bln[substr($date,5,2) * 1])."</b> tahun <b>".ucfirst($thn[substr($date,0,4)])."</b>";
 	}
 	
 	function format_tanggal ($tanggal,$mode="dbY",$withtime=false,$gmt7 = false) {

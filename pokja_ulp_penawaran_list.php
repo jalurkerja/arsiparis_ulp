@@ -12,7 +12,7 @@
 			$db->update();
 			?> <script> window.location="?";</script> <?php
 		} else {
-			echo "<font color='red'><b>Maaf, dokument ini tidak dapat di hapus, karena dapat mempengaruhi dokumen yang lain.</b></font>";
+			echo "<font color='red'><b>Maaf, dokumen ini tidak dapat di hapus, karena dapat mempengaruhi dokumen yang lain.</b></font>";
 		}
 	}
 ?>
