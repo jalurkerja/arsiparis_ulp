@@ -95,9 +95,16 @@
          <?=$t->header(array("No","Nama","NIP"));?>
 		 <?php
 			$db->addtable("procurement_work_pokja"); $db->where("procurement_work_id",$_GET["id"]); $db->order("id");
+			$yy = 0;
 			foreach($db->fetch_data(true) as $xx => $procurement_work_pokja){
+				$yy++;
 				$txt_pokja_name = $f->input("pokja_name[".$xx."]",$procurement_work_pokja["pokja_name"],"size='50'");
 				$txt_pokja_nip = $f->input("pokja_nip[".$xx."]",$procurement_work_pokja["pokja_nip"],"size='50'");
+				echo $t->row(array($xx+1,$txt_pokja_name,$txt_pokja_nip));
+			}
+			for($xx = $yy; $xx < 5; $xx++){
+				$txt_pokja_name = $f->input("pokja_name[".$xx."]","","size='50'");
+				$txt_pokja_nip = $f->input("pokja_nip[".$xx."]","","size='50'");
 				echo $t->row(array($xx+1,$txt_pokja_name,$txt_pokja_nip));
 			}
 		 ?>

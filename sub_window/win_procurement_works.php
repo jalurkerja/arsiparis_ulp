@@ -14,14 +14,17 @@
 	function parent_adds_load(procurement_work_id,name,work_category,hps_nomor,hps_nominal,hps_ok_by,hps_ok_at,work_days,ppk_name,ppk_nip){
 		parent.document.getElementById("<?=$_GET["name"];?>").value = procurement_work_id;
 		parent.document.getElementById("sw_caption_<?=$_GET["name"];?>").innerHTML = name;
-		parent.document.getElementById("work_category").innerHTML = work_category;
-		parent.document.getElementById("hps_nomor").innerHTML = hps_nomor;
-		parent.document.getElementById("hps_nominal").innerHTML = hps_nominal;
-		parent.document.getElementById("hps_ok_by").innerHTML = hps_ok_by;
-		parent.document.getElementById("hps_ok_at").innerHTML = hps_ok_at;
-		parent.document.getElementById("work_days").innerHTML = work_days;
-		parent.document.getElementById("ppk_name").innerHTML = ppk_name;
-		parent.document.getElementById("ppk_nip").innerHTML = ppk_nip;
+		try{ parent.document.getElementById("sw_caption_text_<?=$_GET["name"];?>").value = name; } catch (e) {}
+		try{
+			parent.document.getElementById("work_category").innerHTML = work_category;
+			parent.document.getElementById("hps_nomor").innerHTML = hps_nomor;
+			parent.document.getElementById("hps_nominal").innerHTML = hps_nominal;
+			parent.document.getElementById("hps_ok_by").innerHTML = hps_ok_by;
+			parent.document.getElementById("hps_ok_at").innerHTML = hps_ok_at;
+			parent.document.getElementById("work_days").innerHTML = work_days;
+			parent.document.getElementById("ppk_name").innerHTML = ppk_name;
+			parent.document.getElementById("ppk_nip").innerHTML = ppk_nip;
+		} catch (e) {}
 		parent.$.fancybox.close();
 	}
 </script>

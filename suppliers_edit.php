@@ -1,6 +1,18 @@
 <?php include_once "head.php";?>
 <div class="bo_title">Ubah Supplier / Penyedia Jasa</div>
+<script>
+	function deleteing_last_row(id){
+		if(confirm("Anda yakin akan menghapus data pada baris terkahir?")){
+			window.location = "?deleting=1&id="+id;
+		}
+	}
+</script>
 <?php
+	if(isset($_GET["deleting"])){
+		$supplier_file_id = $db->fetch_single_data("supplier_files","id",array("supplier_id" => $_GET["id"]),array("id DESC"));
+		$db->addtable("supplier_files");$db->where("id",$supplier_file_id);$db->delete_();
+		javascript("window.location='?id=".$_GET["id"]."';");
+	}
 	if(isset($_POST["save"])){
 		$db->addtable("suppliers");			$db->where("id",$_GET["id"]);
 		$db->addfield("name");				$db->addvalue($_POST["name"]);
@@ -20,22 +32,29 @@
 			$supplier_id = $_GET["id"];
 			foreach($_FILES["scan_file"]["tmp_name"] as $key => $tmp_name){
 				if($tmp_name){
+					$data_ada = $db->fetch_single_data("supplier_files","id",array("supplier_id" => $supplier_id,"filename" => "%_".$supplier_id."_".$key.".%:LIKE"));
+					
 					$_ext = strtolower(pathinfo($_FILES['scan_file']['name'][$key],PATHINFO_EXTENSION));
 					$file_type = $_POST["file_type"][$key];
 					$softcopy_name = $file_type."_".$supplier_id."_".$key.".".$_ext;
 					move_uploaded_file($tmp_name,"supplier_files/".$softcopy_name);
 					$db->addtable("supplier_files");
-					$db->where("supplier_id",$supplier_id);
-					$db->where("filename","%_".$supplier_id."_".$key.".%:LIKE");
 					$db->addfield("supplier_id");	$db->addvalue($supplier_id);
 					$db->addfield("file_type");		$db->addvalue($file_type);
 					$db->addfield("filename");		$db->addvalue($softcopy_name);
-					$db->update();
+					if($data_ada > 0){						
+						$db->where("supplier_id",$supplier_id);
+						$db->where("filename","%_".$supplier_id."_".$key.".%:LIKE");
+						$db->update();
+					} else {
+						$inserting = $db->insert();
+					}
+					
 				}
 			}
-			javascript("alert('Data Saved');");
+			echo "<font color='blue'><b>Data Updated</b></font>";
 		} else {
-			javascript("alert('Saving data failed');");
+			echo "<font color='red'><b>Saving data failed</b></font>";
 		}
 	}
 	
@@ -52,7 +71,7 @@
 	$siup_validity		= $f->input("siup_validity",$supplier["siup_validity"],"type='date'");
 	
 	$plusminbutton = $f->input("addrow","+","type='button' style='width:25px' onclick=\"adding_row('detail_area','row_detail_');\"")."&nbsp;";
-	$plusminbutton .= $f->input("subrow","-","type='button' style='width:25px' onclick=\"substract_row('detail_area','row_detail_');\"");
+	$plusminbutton .= $f->input("subrow","-","type='button' style='width:25px' onclick=\"deleteing_last_row('".$_GET["id"]."');\"");
 	
 	$file_types = array("siup"=>"SIUP","tdp"=>"TDP","spt"=>"SPT Pajak Tahunan","npwp"=>"NPWP","akta"=>"Akta Perusahaan","rekening"=>"Rekening Bank Perusahaan");
 	$sel_file_type = $f->select("file_type[0]",$file_types,"");

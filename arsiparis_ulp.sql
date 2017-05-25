@@ -128,7 +128,7 @@ CREATE TABLE `backoffice_menu_privileges` (
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `group_id` (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,7 @@ CREATE TABLE `backoffice_menu_privileges` (
 
 LOCK TABLES `backoffice_menu_privileges` WRITE;
 /*!40000 ALTER TABLE `backoffice_menu_privileges` DISABLE KEYS */;
-INSERT INTO `backoffice_menu_privileges` VALUES (1,1,1,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(2,1,2,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(3,1,8,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(4,1,9,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(5,1,10,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(6,1,11,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(7,1,12,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(8,1,13,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(9,1,14,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(10,1,3,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(11,1,4,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(12,1,16,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(13,1,17,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(14,1,18,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(15,1,19,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(16,1,20,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(17,1,21,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(18,1,22,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(19,1,23,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(20,1,24,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(21,1,25,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(22,1,26,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:33'),(23,1,27,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(24,1,28,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(25,1,5,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(26,1,29,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(27,1,30,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(28,1,31,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(29,1,32,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(30,1,33,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(31,1,34,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(32,1,35,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(33,1,36,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(34,1,37,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(35,1,38,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(36,1,6,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(37,1,7,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(38,1,15,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33');
+INSERT INTO `backoffice_menu_privileges` VALUES (1,1,1,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(2,1,2,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(3,1,8,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(4,1,9,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(5,1,10,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(6,1,11,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(7,1,12,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(8,1,13,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(9,1,14,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(10,1,3,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(11,1,4,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(12,1,16,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(13,1,17,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(14,1,18,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(15,1,19,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(16,1,20,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(17,1,21,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(18,1,22,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(19,1,23,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(20,1,24,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(21,1,25,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:32'),(22,1,26,1,'2017-05-12 17:16:32','superuser','127.0.0.1','2017-05-12 10:16:33'),(23,1,27,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(24,1,28,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(25,1,5,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(26,1,29,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(27,1,30,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(28,1,31,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(29,1,32,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(30,1,33,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(31,1,34,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(32,1,35,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(33,1,36,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(34,1,37,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(35,1,38,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(36,1,6,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(37,1,7,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(38,1,15,1,'2017-05-12 17:16:33','superuser','127.0.0.1','2017-05-12 10:16:33'),(39,2,1,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(40,2,2,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(41,2,11,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(42,2,12,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(43,2,14,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(44,2,3,1,'2017-05-23 10:13:00','superuser','127.0.0.1','2017-05-23 03:13:00'),(45,7,1,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(46,7,3,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(47,7,5,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(48,7,37,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(49,7,6,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(50,7,7,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24'),(51,7,15,1,'2017-05-23 17:17:24','superuser','127.0.0.1','2017-05-23 10:17:24');
 /*!40000 ALTER TABLE `backoffice_menu_privileges` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +250,7 @@ CREATE TABLE `dokumen_pengadaan_undangan` (
   `updated_ip` varchar(20) DEFAULT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +259,7 @@ CREATE TABLE `dokumen_pengadaan_undangan` (
 
 LOCK TABLES `dokumen_pengadaan_undangan` WRITE;
 /*!40000 ALTER TABLE `dokumen_pengadaan_undangan` DISABLE KEYS */;
-INSERT INTO `dokumen_pengadaan_undangan` VALUES (22,1,'01/ULP/C/344/BP2IP-2016','2016-11-25',2,'2017-05-19 10:14:54','superuser','127.0.0.1','2017-05-19 03:14:54'),(23,1,'01/ULP/C/344/BP2IP-2016','2016-11-25',1,'2017-05-19 10:14:54','superuser','127.0.0.1','2017-05-19 03:14:54');
+INSERT INTO `dokumen_pengadaan_undangan` VALUES (35,1,'01/ULP/C/344/BP2IP-2016','2016-11-25',10,'2017-05-25 09:33:08','superuser','127.0.0.1','2017-05-25 02:33:08');
 /*!40000 ALTER TABLE `dokumen_pengadaan_undangan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,7 +281,7 @@ CREATE TABLE `groups` (
   `updated_ip` varchar(20) DEFAULT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,7 +290,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'Administrator','2017-05-12 17:14:06','superuser','127.0.0.1','2017-05-12 17:14:06','superuser','127.0.0.1','2017-05-12 10:14:06'),(2,'Anggota ULP','2017-05-12 17:15:08','superuser','127.0.0.1','2017-05-12 17:15:08','superuser','127.0.0.1','2017-05-12 10:15:08'),(3,'Pokja','2017-05-12 17:15:16','superuser','127.0.0.1','2017-05-12 17:15:16','superuser','127.0.0.1','2017-05-12 10:15:16'),(4,'Pejabat Pengadaan','2017-05-12 17:15:29','superuser','127.0.0.1','2017-05-12 17:15:29','superuser','127.0.0.1','2017-05-12 10:15:29'),(5,'PPK','2017-05-12 17:15:43','superuser','127.0.0.1','2017-05-12 17:15:43','superuser','127.0.0.1','2017-05-12 10:15:43'),(6,'BMN','2017-05-12 17:16:05','superuser','127.0.0.1','2017-05-12 17:16:05','superuser','127.0.0.1','2017-05-12 10:16:05');
+INSERT INTO `groups` VALUES (1,'Administrator','2017-05-12 17:14:06','superuser','127.0.0.1','2017-05-12 17:14:06','superuser','127.0.0.1','2017-05-12 10:14:06'),(2,'Anggota ULP','2017-05-12 17:15:08','superuser','127.0.0.1','2017-05-12 17:15:08','superuser','127.0.0.1','2017-05-12 10:15:08'),(3,'Pokja','2017-05-12 17:15:16','superuser','127.0.0.1','2017-05-12 17:15:16','superuser','127.0.0.1','2017-05-12 10:15:16'),(4,'Pejabat Pengadaan','2017-05-12 17:15:29','superuser','127.0.0.1','2017-05-12 17:15:29','superuser','127.0.0.1','2017-05-12 10:15:29'),(5,'PPK','2017-05-12 17:15:43','superuser','127.0.0.1','2017-05-12 17:15:43','superuser','127.0.0.1','2017-05-12 10:15:43'),(6,'BMN','2017-05-12 17:16:05','superuser','127.0.0.1','2017-05-12 17:16:05','superuser','127.0.0.1','2017-05-12 10:16:05'),(7,'PPK Demisioner','2017-05-23 17:17:06','superuser','127.0.0.1','2017-05-23 17:17:06','superuser','127.0.0.1','2017-05-23 10:17:06');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,7 +378,7 @@ CREATE TABLE `log_histories` (
   `log_ip` varchar(20) DEFAULT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -387,7 +387,7 @@ CREATE TABLE `log_histories` (
 
 LOCK TABLES `log_histories` WRITE;
 /*!40000 ALTER TABLE `log_histories` DISABLE KEYS */;
-INSERT INTO `log_histories` VALUES (1,1,'superuser',2,'2017-05-10 08:53:28','127.0.0.1','2017-05-10 01:53:28'),(2,1,'superuser',1,'2017-05-10 08:53:31','127.0.0.1','2017-05-10 01:53:31'),(3,1,'superuser',1,'2017-05-10 10:26:47','127.0.0.1','2017-05-10 03:26:47'),(4,1,'superuser',1,'2017-05-12 17:10:36','127.0.0.1','2017-05-12 10:10:36'),(5,1,'superuser',2,'2017-05-12 17:17:39','127.0.0.1','2017-05-12 10:17:39'),(6,2,'admin@bp2ip.dishub.or.id',1,'2017-05-12 17:17:43','127.0.0.1','2017-05-12 10:17:43'),(7,2,'admin@bp2ip.dishub.or.id',2,'2017-05-12 19:27:40','127.0.0.1','2017-05-12 12:27:40'),(8,1,'superuser',1,'2017-05-12 19:27:44','127.0.0.1','2017-05-12 12:27:44'),(9,1,'superuser',1,'2017-05-13 09:22:29','127.0.0.1','2017-05-13 02:22:29'),(10,1,'superuser',1,'2017-05-13 15:35:09','127.0.0.1','2017-05-13 08:35:09'),(11,1,'superuser',1,'2017-05-13 20:07:48','127.0.0.1','2017-05-13 13:07:49'),(12,1,'superuser',1,'2017-05-13 20:58:29','127.0.0.1','2017-05-13 13:58:29'),(13,1,'superuser',1,'2017-05-13 22:14:00','127.0.0.1','2017-05-13 15:14:00'),(14,1,'superuser',1,'2017-05-14 14:06:09','127.0.0.1','2017-05-14 07:06:09'),(15,1,'superuser',1,'2017-05-14 14:12:32','192.168.0.14','2017-05-14 07:12:32'),(16,1,'superuser',1,'2017-05-14 14:40:27','127.0.0.1','2017-05-14 07:40:27'),(17,1,'superuser',1,'2017-05-14 20:18:28','127.0.0.1','2017-05-14 13:18:28'),(18,1,'superuser',1,'2017-05-16 08:25:24','127.0.0.1','2017-05-16 01:25:24'),(19,1,'superuser',1,'2017-05-16 10:31:42','192.168.43.219','2017-05-16 03:31:42'),(20,1,'superuser',1,'2017-05-18 08:49:37','127.0.0.1','2017-05-18 01:49:37'),(21,1,'superuser',2,'2017-05-18 08:49:42','127.0.0.1','2017-05-18 01:49:42'),(22,1,'superuser',1,'2017-05-18 08:49:49','127.0.0.1','2017-05-18 01:49:49'),(23,1,'superuser',1,'2017-05-19 05:49:11','127.0.0.1','2017-05-18 22:49:11'),(24,1,'superuser',1,'2017-05-19 10:58:50','192.168.0.15','2017-05-19 03:58:50'),(25,1,'superuser',1,'2017-05-19 12:32:26','192.168.0.20','2017-05-19 05:32:26'),(26,1,'superuser',1,'2017-05-19 13:55:35','127.0.0.1','2017-05-19 06:55:35'),(27,1,'superuser',1,'2017-05-19 13:59:25','192.168.0.23','2017-05-19 06:59:25'),(28,1,'superuser',1,'2017-05-19 15:50:34','192.168.0.10','2017-05-19 08:50:34'),(29,1,'superuser',1,'2017-05-19 17:39:21','127.0.0.1','2017-05-19 10:39:21'),(30,1,'superuser',1,'2017-05-20 10:23:53','192.168.0.18','2017-05-20 03:23:53'),(31,1,'superuser',1,'2017-05-20 12:34:04','127.0.0.1','2017-05-20 05:34:04'),(32,1,'superuser',1,'2017-05-20 14:20:42','127.0.0.1','2017-05-20 07:20:42'),(33,1,'superuser',1,'2017-05-20 14:21:35','192.168.0.19','2017-05-20 07:21:35'),(34,1,'superuser',1,'2017-05-20 20:19:56','127.0.0.1','2017-05-20 13:19:56'),(35,1,'superuser',1,'2017-05-20 22:12:21','192.168.0.20','2017-05-20 15:12:21'),(36,1,'superuser',1,'2017-05-21 17:00:56','127.0.0.1','2017-05-21 10:00:56'),(37,1,'superuser',1,'2017-05-22 07:44:00','127.0.0.1','2017-05-22 00:44:00'),(38,1,'superuser',1,'2017-05-22 08:49:39','192.168.1.132','2017-05-22 01:49:39'),(39,1,'superuser',1,'2017-05-22 20:08:32','127.0.0.1','2017-05-22 13:08:32'),(40,1,'superuser',1,'2017-05-22 21:35:33','127.0.0.1','2017-05-22 14:35:33'),(41,1,'superuser',1,'2017-05-22 21:52:30','192.168.0.20','2017-05-22 14:52:30');
+INSERT INTO `log_histories` VALUES (1,1,'superuser',2,'2017-05-10 08:53:28','127.0.0.1','2017-05-10 01:53:28'),(2,1,'superuser',1,'2017-05-10 08:53:31','127.0.0.1','2017-05-10 01:53:31'),(3,1,'superuser',1,'2017-05-10 10:26:47','127.0.0.1','2017-05-10 03:26:47'),(4,1,'superuser',1,'2017-05-12 17:10:36','127.0.0.1','2017-05-12 10:10:36'),(5,1,'superuser',2,'2017-05-12 17:17:39','127.0.0.1','2017-05-12 10:17:39'),(6,2,'admin@bp2ip.dishub.or.id',1,'2017-05-12 17:17:43','127.0.0.1','2017-05-12 10:17:43'),(7,2,'admin@bp2ip.dishub.or.id',2,'2017-05-12 19:27:40','127.0.0.1','2017-05-12 12:27:40'),(8,1,'superuser',1,'2017-05-12 19:27:44','127.0.0.1','2017-05-12 12:27:44'),(9,1,'superuser',1,'2017-05-13 09:22:29','127.0.0.1','2017-05-13 02:22:29'),(10,1,'superuser',1,'2017-05-13 15:35:09','127.0.0.1','2017-05-13 08:35:09'),(11,1,'superuser',1,'2017-05-13 20:07:48','127.0.0.1','2017-05-13 13:07:49'),(12,1,'superuser',1,'2017-05-13 20:58:29','127.0.0.1','2017-05-13 13:58:29'),(13,1,'superuser',1,'2017-05-13 22:14:00','127.0.0.1','2017-05-13 15:14:00'),(14,1,'superuser',1,'2017-05-14 14:06:09','127.0.0.1','2017-05-14 07:06:09'),(15,1,'superuser',1,'2017-05-14 14:12:32','192.168.0.14','2017-05-14 07:12:32'),(16,1,'superuser',1,'2017-05-14 14:40:27','127.0.0.1','2017-05-14 07:40:27'),(17,1,'superuser',1,'2017-05-14 20:18:28','127.0.0.1','2017-05-14 13:18:28'),(18,1,'superuser',1,'2017-05-16 08:25:24','127.0.0.1','2017-05-16 01:25:24'),(19,1,'superuser',1,'2017-05-16 10:31:42','192.168.43.219','2017-05-16 03:31:42'),(20,1,'superuser',1,'2017-05-18 08:49:37','127.0.0.1','2017-05-18 01:49:37'),(21,1,'superuser',2,'2017-05-18 08:49:42','127.0.0.1','2017-05-18 01:49:42'),(22,1,'superuser',1,'2017-05-18 08:49:49','127.0.0.1','2017-05-18 01:49:49'),(23,1,'superuser',1,'2017-05-19 05:49:11','127.0.0.1','2017-05-18 22:49:11'),(24,1,'superuser',1,'2017-05-19 10:58:50','192.168.0.15','2017-05-19 03:58:50'),(25,1,'superuser',1,'2017-05-19 12:32:26','192.168.0.20','2017-05-19 05:32:26'),(26,1,'superuser',1,'2017-05-19 13:55:35','127.0.0.1','2017-05-19 06:55:35'),(27,1,'superuser',1,'2017-05-19 13:59:25','192.168.0.23','2017-05-19 06:59:25'),(28,1,'superuser',1,'2017-05-19 15:50:34','192.168.0.10','2017-05-19 08:50:34'),(29,1,'superuser',1,'2017-05-19 17:39:21','127.0.0.1','2017-05-19 10:39:21'),(30,1,'superuser',1,'2017-05-20 10:23:53','192.168.0.18','2017-05-20 03:23:53'),(31,1,'superuser',1,'2017-05-20 12:34:04','127.0.0.1','2017-05-20 05:34:04'),(32,1,'superuser',1,'2017-05-20 14:20:42','127.0.0.1','2017-05-20 07:20:42'),(33,1,'superuser',1,'2017-05-20 14:21:35','192.168.0.19','2017-05-20 07:21:35'),(34,1,'superuser',1,'2017-05-20 20:19:56','127.0.0.1','2017-05-20 13:19:56'),(35,1,'superuser',1,'2017-05-20 22:12:21','192.168.0.20','2017-05-20 15:12:21'),(36,1,'superuser',1,'2017-05-21 17:00:56','127.0.0.1','2017-05-21 10:00:56'),(37,1,'superuser',1,'2017-05-22 07:44:00','127.0.0.1','2017-05-22 00:44:00'),(38,1,'superuser',1,'2017-05-22 08:49:39','192.168.1.132','2017-05-22 01:49:39'),(39,1,'superuser',1,'2017-05-22 20:08:32','127.0.0.1','2017-05-22 13:08:32'),(40,1,'superuser',1,'2017-05-22 21:35:33','127.0.0.1','2017-05-22 14:35:33'),(41,1,'superuser',1,'2017-05-22 21:52:30','192.168.0.20','2017-05-22 14:52:30'),(42,1,'superuser',1,'2017-05-23 10:11:12','127.0.0.1','2017-05-23 03:11:12'),(43,1,'superuser',1,'2017-05-23 10:21:03','192.168.43.219','2017-05-23 03:21:03'),(44,1,'superuser',2,'2017-05-23 16:03:17','127.0.0.1','2017-05-23 09:03:17'),(45,1,'superuser',1,'2017-05-23 16:17:21','127.0.0.1','2017-05-23 09:17:21'),(46,1,'superuser',2,'2017-05-23 16:19:34','127.0.0.1','2017-05-23 09:19:34'),(47,2,'admin@bp2ip.dishub.or.id',1,'2017-05-23 16:19:43','127.0.0.1','2017-05-23 09:19:43'),(48,2,'admin@bp2ip.dishub.or.id',2,'2017-05-23 16:19:55','127.0.0.1','2017-05-23 09:19:55'),(49,1,'superuser',1,'2017-05-23 16:20:03','127.0.0.1','2017-05-23 09:20:03'),(50,1,'superuser',1,'2017-05-23 16:25:10','192.168.100.176','2017-05-23 09:25:10'),(51,1,'superuser',2,'2017-05-23 17:17:44','127.0.0.1','2017-05-23 10:17:44'),(52,2,'admin@bp2ip.dishub.or.id',1,'2017-05-23 17:17:53','127.0.0.1','2017-05-23 10:17:53'),(53,2,'admin@bp2ip.dishub.or.id',2,'2017-05-23 17:18:02','127.0.0.1','2017-05-23 10:18:02'),(54,1,'superuser',1,'2017-05-23 17:18:14','127.0.0.1','2017-05-23 10:18:14'),(55,1,'superuser',2,'2017-05-23 17:31:58','127.0.0.1','2017-05-23 10:31:58'),(56,1,'superuser',1,'2017-05-23 17:32:07','127.0.0.1','2017-05-23 10:32:07'),(57,1,'superuser',2,'2017-05-23 17:34:51','127.0.0.1','2017-05-23 10:34:51'),(58,1,'superuser',1,'2017-05-23 17:34:52','127.0.0.1','2017-05-23 10:34:52'),(59,0,'',2,'2017-05-25 09:03:55','127.0.0.1','2017-05-25 02:03:55'),(60,1,'superuser',1,'2017-05-25 09:03:58','127.0.0.1','2017-05-25 02:03:58');
 /*!40000 ALTER TABLE `log_histories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -456,7 +456,7 @@ CREATE TABLE `pokja_ulp` (
 
 LOCK TABLES `pokja_ulp` WRITE;
 /*!40000 ALTER TABLE `pokja_ulp` DISABLE KEYS */;
-INSERT INTO `pokja_ulp` VALUES (1,2,'01/ULP/C/56/BP2IP-2017','2017-02-23','|1||2||4||5|','2017-02-24','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-22 07:59:13','superuser','02/ULP/C/56/BP2IP-2017','2017-02-27','|1||2||4||5|','2017-02-28','2017-05-22 08:31:42','superuser','03/ULP/C/56/BP2IP-2017','2017-02-28','2017-05-22 22:21:16','superuser','04/ULP/C/56/BP2IP-2017','2017-03-01','2017-05-22 22:23:40','superuser','','0000-00-00','','0000-00-00','00:00:00','','0000-00-00 00:00:00','','','0000-00-00',0,'0000-00-00 00:00:00','','','0000-00-00','0000-00-00 00:00:00','','','0000-00-00','0000-00-00 00:00:00','','0000-00-00','2017-05-22 15:23:40');
+INSERT INTO `pokja_ulp` VALUES (1,2,'01/ULP/C/56/BP2IP-2017','2017-02-23','|1||2||4||5||13||14||15|','2017-02-24','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-23 16:55:36','superuser','02/ULP/C/56/BP2IP-2017','2017-02-27','|1||2||4||5|','2017-02-28','2017-05-22 08:31:42','superuser','03/ULP/C/56/BP2IP-2017','2017-02-28','2017-05-22 22:21:16','superuser','04/ULP/C/56/BP2IP-2017','2017-03-01','2017-05-22 22:23:40','superuser','','0000-00-00','','0000-00-00','00:00:00','','0000-00-00 00:00:00','','','0000-00-00',0,'0000-00-00 00:00:00','','','0000-00-00','0000-00-00 00:00:00','','','0000-00-00','0000-00-00 00:00:00','','0000-00-00','2017-05-23 09:55:36');
 /*!40000 ALTER TABLE `pokja_ulp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -474,7 +474,7 @@ CREATE TABLE `procurement_work_pokja` (
   `pokja_nip` varchar(100) NOT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,7 +483,7 @@ CREATE TABLE `procurement_work_pokja` (
 
 LOCK TABLES `procurement_work_pokja` WRITE;
 /*!40000 ALTER TABLE `procurement_work_pokja` DISABLE KEYS */;
-INSERT INTO `procurement_work_pokja` VALUES (10,3,'','','2017-05-13 16:02:34'),(11,3,'','','2017-05-13 16:02:34'),(12,3,'','','2017-05-13 16:02:34'),(25,2,'BENNY HIDAYAT','19770925 200912 1 001','2017-05-19 07:45:54'),(26,2,'YAN PERMANA','19800130 200812 1 001','2017-05-19 07:45:54'),(27,2,'SRIYONO','19811202 200912 1 003','2017-05-19 07:45:54');
+INSERT INTO `procurement_work_pokja` VALUES (10,3,'','','2017-05-13 16:02:34'),(11,3,'','','2017-05-13 16:02:34'),(12,3,'','','2017-05-13 16:02:34'),(25,2,'BENNY HIDAYAT','19770925 200912 1 001','2017-05-19 07:45:54'),(26,2,'YAN PERMANA','19800130 200812 1 001','2017-05-19 07:45:54'),(27,2,'SRIYONO','19811202 200912 1 003','2017-05-19 07:45:54'),(28,3,'','','2017-05-23 03:22:13'),(29,3,'','','2017-05-23 03:22:13'),(30,3,'','','2017-05-23 03:22:13');
 /*!40000 ALTER TABLE `procurement_work_pokja` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -519,7 +519,7 @@ CREATE TABLE `procurement_works` (
   `updated_ip` varchar(20) DEFAULT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -528,7 +528,7 @@ CREATE TABLE `procurement_works` (
 
 LOCK TABLES `procurement_works` WRITE;
 /*!40000 ALTER TABLE `procurement_works` DISABLE KEYS */;
-INSERT INTO `procurement_works` VALUES (2,1,'Pengadaan Kursi Makan Ruang Makan','PL.103/23/21/BP2IP.Tng-2017',172562500,'2017-02-22',1,'superuser','2017-05-16','2017-06-01','2017-06-30',35,1,'AMILIA NUR ASTUTI','19850603 201012 2 005','2017','DIPA Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017 Nomor SP DIPA-022.12.1.654603/2017 Tanggal 20 November 2016',7,'Laboratorium','2017-05-19 14:45:53','superuser','127.0.0.1','2017-05-19 08:44:15');
+INSERT INTO `procurement_works` VALUES (2,1,'Pengadaan Kursi Makan Ruang Makan','PL.103/23/21/BP2IP.Tng-2017',172562500,'2017-02-22',1,'superuser','2017-05-23','2017-06-01','2017-06-30',35,1,'AMILIA NUR ASTUTI','19850603 201012 2 005','2017','DIPA Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017 Nomor SP DIPA-022.12.1.654603/2017 Tanggal 20 November 2016',7,'Laboratorium','2017-05-23 16:32:37','superuser','127.0.0.1','2017-05-23 09:33:01'),(3,1,'Pengadaan Software Arsiparis','sdafadsfasd',10000000,'0000-00-00',1,'superuser','2017-05-23','0000-00-00','0000-00-00',0,1,'','','','DIPA Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017 Nomor SP DIPA-022.12.1.654603/2017',0,'','2017-05-23 10:22:51','superuser','192.168.43.219','2017-05-23 03:23:06');
 /*!40000 ALTER TABLE `procurement_works` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -541,6 +541,8 @@ DROP TABLE IF EXISTS `scanned_documents`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `scanned_documents` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `procurement_work_id` int(11) NOT NULL,
+  `procurement_work_name` varchar(255) NOT NULL,
   `document_type_id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
   `nomor` varchar(100) NOT NULL,
@@ -551,7 +553,7 @@ CREATE TABLE `scanned_documents` (
   `updated_ip` varchar(20) DEFAULT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -560,6 +562,7 @@ CREATE TABLE `scanned_documents` (
 
 LOCK TABLES `scanned_documents` WRITE;
 /*!40000 ALTER TABLE `scanned_documents` DISABLE KEYS */;
+INSERT INTO `scanned_documents` VALUES (1,2,'',9,0,'01/ULP/C/64/BP2IP-2017',1,'dok_1_0_.jpg','2017-05-25 09:59:39','superuser','127.0.0.1','2017-05-25 02:59:39'),(2,2,'',9,1,'01/ULP/C/64/BP2IP-2017',1,'dok_1_1_.jpg','2017-05-25 09:59:39','superuser','127.0.0.1','2017-05-25 02:59:39'),(3,2,'',9,1,'01/ULP/C/64/BP2IP-2017',1,'dok_1_2_.jpg','2017-05-25 09:59:39','superuser','127.0.0.1','2017-05-25 02:59:39'),(4,2,'Pengadaan Kursi Makan Ruang Makan',12,0,'01/ULP/C/64/BP2IP-2017',1,'dok_4_0_.jpg','2017-05-25 10:33:29','superuser','127.0.0.1','2017-05-25 03:33:29'),(9,2,'Pengadaan Kursi Makan Ruang Makan',12,6,'01/ULP/C/64/BP2IP-2017',1,'dok_6_3_.jpg','2017-05-25 10:32:04','superuser','127.0.0.1','2017-05-25 03:32:04');
 /*!40000 ALTER TABLE `scanned_documents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -692,7 +695,7 @@ CREATE TABLE `supplier_files` (
   `filename` varchar(255) NOT NULL,
   `xtimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -701,7 +704,7 @@ CREATE TABLE `supplier_files` (
 
 LOCK TABLES `supplier_files` WRITE;
 /*!40000 ALTER TABLE `supplier_files` DISABLE KEYS */;
-INSERT INTO `supplier_files` VALUES (1,1,'siup','siup_1_0.jpg','2017-05-12 14:50:12'),(2,1,'tdp','tdp_1_1.jpg','2017-05-12 14:50:12'),(3,1,'spt','spt_1_2.jpg','2017-05-12 14:50:12'),(4,1,'npwp','npwp_1_3.jpg','2017-05-12 14:50:12'),(5,1,'akta','akta_1_4.jpg','2017-05-12 14:50:12'),(6,1,'akta','akta_1_5.jpg','2017-05-12 14:50:12'),(7,1,'akta','akta_1_6.jpg','2017-05-12 14:50:12'),(8,1,'rekening','rekening_1_7.png','2017-05-12 14:50:12');
+INSERT INTO `supplier_files` VALUES (1,1,'siup','siup_1_0.jpg','2017-05-12 14:50:12'),(2,1,'tdp','tdp_1_1.jpg','2017-05-12 14:50:12'),(3,1,'spt','spt_1_2.jpg','2017-05-12 14:50:12'),(4,1,'npwp','npwp_1_3.jpg','2017-05-12 14:50:12'),(5,1,'akta','akta_1_4.jpg','2017-05-12 14:50:12'),(6,1,'akta','akta_1_5.jpg','2017-05-12 14:50:12'),(7,1,'akta','akta_1_6.jpg','2017-05-12 14:50:12'),(9,16,'siup','siup_16_0.jpg','2017-05-25 03:34:35'),(10,16,'npwp','npwp_16_1.jpg','2017-05-25 03:34:35');
 /*!40000 ALTER TABLE `supplier_files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -738,7 +741,7 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
-INSERT INTO `suppliers` VALUES (1,0,'CV. DUTA ASRI JAYA','|1||2||3|','Jl. Veteran Pos 2 Gg. Delima VI Rt.002 Rw.009 Ranca Goong, Legok - Kab.Tangerang','RIAN SAIFUDDIN','DIREKTUR',1000123123,'','Perkantoran','2017-06-30','2017-05-13 22:37:21','superuser','127.0.0.1','2017-05-19 02:31:28'),(2,0,'PT. JAYA MUDA SELARAS','|1||3|','Jl. Pondok Kelapa Raya No. 4C, Pondok Kelapa - Jakarta Timur','AAAA','DIREKTUR',0,'','','0000-00-00','2017-05-19 09:37:01','superuser','127.0.0.1','2017-05-19 02:37:01'),(3,0,'CV. PERMATA ALAM','|1|','Jl. Sukamulya No.4 Sukasari-Tangerang, Banten','SYAIFUL ZUHRI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:11:21'),(4,0,'CV. ADITYA PRATAMA KONSTRUKSI','|1|','Jl. Kavling Pemda V No.124 Rt.003/05 Cibodas, Tangerang','TRI ADITYA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(5,0,'CV. ANKURA','|1|','Jl. Taruna Raya No.10 Babakan-Tangerang, Banten','ANDI KUSUMA NEGARA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(6,0,'CV. BUDI BIG CONTRACTOR','|1|','Jl. Taruna IV No. 19 RT.005 RW.003 Babakan, Tangerang - Banten','WIDIYANTO','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(7,0,'CV. DARMA BAKTI MANDIRI','|1|','Jl. Bentengan X No.11 Rt.013/001 Sunter Jaya, Tanjung Priuk - Jakarta Utara','DANURI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(8,0,'CV. KEMUMU KEMBAR','|1|','Jl. Raya Kalibata No.15 D Rt.002/007 Cililitan, Kramat Jati - Jakarta Timur','SYAHRIL','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(9,0,'CV. MANDALA TIRTA RAYA','|1|','Jl. Utan Jati/Tabaci No. 90 Rt.009/011 Pegadungan, Kalideres - Jakarta Barat','SAID ISMAIL','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(10,0,'CV. MITRA UTAMA','|1|','Jl. Tipar Raya Rt.02 Rw.01 Tipar Raya, Jambe - Tangerang','HJ. ADHA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(11,0,'CV. PERMATA ALAM','|1|','Jl. Sukamulya No.4 Sukasari-Tangerang, Banten','SYAIFUL ZUHRI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(12,0,'CV. PRIMA TEKNIK','|1|','Jl. Palem Merah V/10 Rt.004/019, Bencongan-Kelapa Dua, Tangerang','MUHAMMAD ARIEF RAMADHAN','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(13,0,'CV. PUTRI KUSUMA NEGARA','|1|','Jl. Merdeka No.8A RT.001 RW.02 Gerendeng, Karawaci - Tangerang','INDRA PATRIASE','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(14,0,'CV. RUMAH MAKAN JAWA TENGAH','|1|','Komp. Gedung DPR-MPR RI Jl. Jend. Gatot Subroto - Jakarta Pusat','SUSIANA LISARI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(15,0,'CV. WIDI KARYA MANDIRI','|1|','Jl. Taruna Raya No.11 RT.006 RW.003 Babakan-Tangerang, Banten','DEWI KANIA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47');
+INSERT INTO `suppliers` VALUES (1,0,'CV. DUTA ASRI JAYA','|1||2||3|','Jl. Veteran Pos 2 Gg. Delima VI Rt.002 Rw.009 Ranca Goong, Legok - Kab.Tangerang','RIAN SAIFUDDIN','DIREKTUR',1000123123,'','Perkantoran','2017-06-30','2017-05-25 10:44:45','superuser','127.0.0.1','2017-05-25 03:44:45'),(2,0,'PT. JAYA MUDA SELARAS','|1||3|','Jl. Pondok Kelapa Raya No. 4C, Pondok Kelapa - Jakarta Timur','AAAA','DIREKTUR',0,'','','0000-00-00','2017-05-19 09:37:01','superuser','127.0.0.1','2017-05-19 02:37:01'),(3,0,'CV. PERMATA ALAM','|1|','Jl. Sukamulya No.4 Sukasari-Tangerang, Banten','SYAIFUL ZUHRI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:11:21'),(4,0,'CV. ADITYA PRATAMA KONSTRUKSI','|1|','Jl. Kavling Pemda V No.124 Rt.003/05 Cibodas, Tangerang','TRI ADITYA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(5,0,'CV. ANKURA','|1|','Jl. Taruna Raya No.10 Babakan-Tangerang, Banten','ANDI KUSUMA NEGARA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(6,0,'CV. BUDI BIG CONTRACTOR','|1|','Jl. Taruna IV No. 19 RT.005 RW.003 Babakan, Tangerang - Banten','WIDIYANTO','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(7,0,'CV. DARMA BAKTI MANDIRI','|1|','Jl. Bentengan X No.11 Rt.013/001 Sunter Jaya, Tanjung Priuk - Jakarta Utara','DANURI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(8,0,'CV. KEMUMU KEMBAR','|1|','Jl. Raya Kalibata No.15 D Rt.002/007 Cililitan, Kramat Jati - Jakarta Timur','SYAHRIL','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(9,0,'CV. MANDALA TIRTA RAYA','|1|','Jl. Utan Jati/Tabaci No. 90 Rt.009/011 Pegadungan, Kalideres - Jakarta Barat','SAID ISMAIL','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(10,0,'CV. MITRA UTAMA','|1|','Jl. Tipar Raya Rt.02 Rw.01 Tipar Raya, Jambe - Tangerang','HJ. ADHA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(11,0,'CV. PERMATA ALAM','|1|','Jl. Sukamulya No.4 Sukasari-Tangerang, Banten','SYAIFUL ZUHRI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(12,0,'CV. PRIMA TEKNIK','|1|','Jl. Palem Merah V/10 Rt.004/019, Bencongan-Kelapa Dua, Tangerang','MUHAMMAD ARIEF RAMADHAN','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(13,0,'CV. PUTRI KUSUMA NEGARA','|1|','Jl. Merdeka No.8A RT.001 RW.02 Gerendeng, Karawaci - Tangerang','INDRA PATRIASE','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(14,0,'CV. RUMAH MAKAN JAWA TENGAH','|1|','Komp. Gedung DPR-MPR RI Jl. Jend. Gatot Subroto - Jakarta Pusat','SUSIANA LISARI','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47'),(15,0,'CV. WIDI KARYA MANDIRI','|1|','Jl. Taruna Raya No.11 RT.006 RW.003 Babakan-Tangerang, Banten','DEWI KANIA','DIREKTUR',0,'','','0000-00-00','0000-00-00 00:00:00','',NULL,'2017-05-21 10:10:47');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -872,7 +875,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,0,'superuser','UjJoMnMxMio=','Superuser','Superuser','Superuser',36,'2017-05-22 21:52:30','2017-05-22 21:35:33','192.168.0.20','127.0.0.1','0000-00-00 00:00:00','',NULL,'0000-00-00 00:00:00','',NULL,0,'2017-05-22 14:52:30'),(2,1,'admin@bp2ip.dishub.or.id','MTIzNDU2','Admin BP2IP','Admin','Admin',1,'2017-05-12 17:17:43','0000-00-00 00:00:00','127.0.0.1','','2017-05-12 17:17:29','superuser','127.0.0.1','2017-05-12 17:17:29','superuser','127.0.0.1',0,'2017-05-12 10:17:43');
+INSERT INTO `users` VALUES (1,0,'superuser','MTIzNDU2','Superuser','Superuser','Superuser',45,'2017-05-25 09:03:58','2017-05-23 17:34:52','127.0.0.1','127.0.0.1','0000-00-00 00:00:00','',NULL,'2017-05-23 17:15:29','superuser','127.0.0.1',0,'2017-05-25 02:03:58'),(2,7,'admin@bp2ip.dishub.or.id','MTIzNDU2','Admin BP2IP','Admin','Admin',3,'2017-05-23 17:17:53','2017-05-23 16:19:43','127.0.0.1','127.0.0.1','2017-05-12 17:17:29','superuser','127.0.0.1','2017-05-23 17:17:42','superuser','127.0.0.1',0,'2017-05-23 10:17:53');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -900,7 +903,7 @@ CREATE TABLE `work_categories` (
 
 LOCK TABLES `work_categories` WRITE;
 /*!40000 ALTER TABLE `work_categories` DISABLE KEYS */;
-INSERT INTO `work_categories` VALUES (1,'Pengadaan Barang/Jasa Nilai &le; 50 juta','2017-05-12 19:38:48','superuser','127.0.0.1','2017-05-12 12:38:48'),(2,'Pengadaan Barang Nilai > 50 jt s/d &le; 200 jt','2017-05-12 19:41:28','superuser','127.0.0.1','2017-05-12 12:41:28'),(3,'Pengadaan Barang > 200 jt & Jasa > 50 jt','2017-05-12 19:42:44','superuser','127.0.0.1','2017-05-12 12:42:44');
+INSERT INTO `work_categories` VALUES (1,'Pengadaan Barang/Jasa Nilai &le; 50 juta','2017-05-12 19:38:48','superuser','127.0.0.1','2017-05-12 12:38:48'),(2,'Pengadaan Barang Nilai > 50 jt s/d ≤ 200 jt dan Jasa < 50 jt','2017-05-23 17:31:06','superuser','127.0.0.1','2017-05-23 10:31:06'),(3,'Pengadaan Barang > 200 jt & Jasa > 50 jt','2017-05-12 19:42:44','superuser','127.0.0.1','2017-05-12 12:42:44');
 /*!40000 ALTER TABLE `work_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -913,4 +916,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-23  7:00:07
+-- Dump completed on 2017-05-25 10:51:49

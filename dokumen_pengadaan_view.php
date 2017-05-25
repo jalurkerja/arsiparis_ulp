@@ -53,8 +53,8 @@
 	if($procurement_work["work_days_type"] == 2) $procurement_work_work_days_type = "kerja";
 	$arr2 = array();
 	array_push($arr2,$db->fetch_single_data("dokumen_pengadaan","nomor",array("id"=>$dokumen_pengadaan_id)));
-	array_push($arr2,$db->fetch_single_data("dokumen_pengadaan_undangan","nomor",array("dokumen_pengadaan_id"=>$dokumen_pengadaan_id,"supplier_id"=>$supplier_id)));
-	array_push($arr2,format_tanggal($db->fetch_single_data("dokumen_pengadaan_undangan","tanggal",array("dokumen_pengadaan_id"=>$dokumen_pengadaan_id,"supplier_id"=>$supplier_id))));
+	array_push($arr2,$db->fetch_single_data("dokumen_pengadaan_undangan","nomor",array("dokumen_pengadaan_id"=>$dokumen_pengadaan_id),array("id")));
+	array_push($arr2,format_tanggal($db->fetch_single_data("dokumen_pengadaan_undangan","tanggal",array("dokumen_pengadaan_id"=>$dokumen_pengadaan_id),array("id"))));
 	array_push($arr2,$db->fetch_single_data("suppliers","name",array("id"=>$supplier_id)));
 	array_push($arr2,$db->fetch_single_data("suppliers","address",array("id"=>$supplier_id)));
 	array_push($arr2,$dokumen_pengadaan_kegiatan_details);

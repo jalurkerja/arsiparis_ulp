@@ -67,7 +67,7 @@
 	<?=$t->start("","editor_content");?>
          <?=$t->header(array("No","Nama","NIP"));?>
 		 <?php
-			for($xx = 0; $xx < 3; $xx++){
+			for($xx = 0; $xx < 5; $xx++){
 				$txt_pokja_name = $f->input("pokja_name[".$xx."]","","size='50'");
 				$txt_pokja_nip = $f->input("pokja_nip[".$xx."]","","size='50'");
 				echo $t->row(array($xx+1,$txt_pokja_name,$txt_pokja_nip));

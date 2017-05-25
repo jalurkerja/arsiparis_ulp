@@ -15,11 +15,13 @@
 		<?=$f->start("filter","GET");?>
 			<?=$t->start();?>
 			<?php
+				$procurement_work_name	= $f->input("procurement_work_name",@$_GET["procurement_work_name"]);
 				$nomor 					= $f->input("nomor",@$_GET["nomor"]);
 				$document_type_id 		= $f->select("document_type_id",$db->fetch_select_data("document_types","id","name",array(),array("name"),"",true),@$_GET["document_type_id"],"style='height:22px;'");
 				$work_category_id 		= $f->select("work_category_id",$db->fetch_select_data("work_categories","id","name",array(),array(),"",true),@$_GET["work_category_id"],"style='height:22px;'");
                 
 			?>
+			     <?=$t->row(array("Nama Pekerjaan",$procurement_work_name));?>
 			     <?=$t->row(array("Nomor Dokumen",$nomor));?>
 			     <?=$t->row(array("Tipe Dokumen",$document_type_id));?>
 			     <?=$t->row(array("Kategori Pekerjaan",$work_category_id));?>
@@ -35,6 +37,7 @@
 
 <?php
 	$whereclause = "parent_id = 0 AND ";
+	if(@$_GET["procurement_work_name"]!="") $whereclause .= "(procurement_work_name LIKE '%".$_GET["procurement_work_name"]."%') AND ";
 	if(@$_GET["nomor"]!="") 			$whereclause .= "(nomor LIKE '%".$_GET["nomor"]."%') AND ";
 	if(@$_GET["document_type_id"]!="") 	$whereclause .= "(document_type_id = '".$_GET["document_type_id"]."') AND ";
 	if(@$_GET["work_category_id"]!="") 	$whereclause .= "(work_category_id = '".$_GET["work_category_id"]."') AND ";
@@ -56,6 +59,7 @@
 	<?=$t->start("","data_content");?>
 	<?=$t->header(array("No",
 						"<div onclick=\"sorting('id');\">ID</div>",
+						"<div onclick=\"sorting('procurement_work_name');\">Nama Pekerjaan</div>",
 						"<div onclick=\"sorting('nomor');\">Nomor Dokumen</div>",
 						"<div onclick=\"sorting('document_type_id');\">Tipe Dokumen</div>",
 						"<div onclick=\"sorting('work_category_id');\">Kategori Pekerjaan</div>",
@@ -71,6 +75,7 @@
 		<?=$t->row(
 					array($no+$start+1,
 						"<a href=\"scanned_documents_edit.php?id=".$scanned_document["id"]."\">".$scanned_document["id"]."</a>",
+                        "<a href=\"scanned_documents_edit.php?id=".$scanned_document["id"]."\">".$scanned_document["procurement_work_name"]."</a>",
                         "<a href=\"scanned_documents_edit.php?id=".$scanned_document["id"]."\">".$scanned_document["nomor"]."</a>",
                         $db->fetch_single_data("document_types","name",array("id"=>$scanned_document["document_type_id"])),
                         $db->fetch_single_data("work_categories","name",array("id"=>$scanned_document["work_category_id"])),
