@@ -4,6 +4,9 @@
 		$db->addtable("procurement_works");
 		$db->where("id",$_GET["deleting"]);
 		$db->delete_();
+		$db->addtable("procurement_work_pokja");
+		$db->where("procurement_work_id",$_GET["deleting"]);
+		$db->delete_();
 		?> <script> window.location="?";</script> <?php
 	}
 ?>

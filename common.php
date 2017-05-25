@@ -34,7 +34,7 @@
 	if($_SERVER["REMOTE_ADDR"] == "::1") $_SERVER["REMOTE_ADDR"] = "127.0.0.1";
 
 	$__group_id 				= $db->fetch_single_data("users","group_id",array("id" => $__user_id));
-	$__is_allowed				= is_file_allowed($__phpself,$__user_id,$__group_id,$db);
+	$__is_allowed				= is_file_allowed();
 	if($__group_id > 0){
 		$db->addtable("backoffice_menu_privileges");
 		$db->addfield("backoffice_menu_id");
@@ -48,7 +48,11 @@
 		$__menu_ids[$menu[0]] = 1;
 	}
 	
-	function is_file_allowed($filename,$user_id,$group_id,$db){
+	function is_file_allowed($access_mode = ""){
+		global $db,$__phpself,$__user_id,$__group_id;
+		$filename = $__phpself;
+		$user_id = $__user_id;
+		$group_id = $__group_id;
 		$is_allowed = true;
 		$file_pattern = "";
 		if(strpos($filename,"_") > 0){
@@ -58,9 +62,12 @@
 		} else { $file_pattern = $filename; }
 		
 		$selected_menu_id = $db->fetch_single_data("backoffice_menu","id",array("url" => $file_pattern.":LIKE"));
-		if($user_id != 1 && $db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id)) == 0) {
+		if($user_id != 1 && $db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id)) == 0)
 			$is_allowed = false;
-		}
+		
+		if($access_mode == "write" && $user_id != 1 && $db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id)) < 2 )
+			$is_allowed = false;
+			
 		return $is_allowed;
 	}
 	

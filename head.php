@@ -159,6 +159,13 @@
 			?>
 				<script> $("body").css({"background-color":"white"});</script>
 				<div style="width:95%;margin-top:20px;margin-left:20px;margin-right:20px;">
+				<?php
+					if(!is_file_allowed("write") && ($_POST["save"] || $_GET["deleting"])){
+						echo "<b style='color:red;'>Maaf, Anda tidak memiliki akses untuk perintah ini.</b>";
+						unset($_POST["save"]);
+						unset($_GET["deleting"]);
+					}
+				?>
 				<?php if(!$__is_allowed){ ?>
 					Forbidden Page!
 				<?php 
