@@ -7,5 +7,5 @@
 		fclose($fp);
 		return $return;
 	}
-	echo read_file("htmls/doc_10_01.html");
+	echo read_file("htmls/morethan50/1.DOK._PPK_1.html");
 ?>
