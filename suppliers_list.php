@@ -55,7 +55,8 @@
 	
 	$db->addtable("suppliers");
 	if($whereclause != "") $db->awhere(substr($whereclause,0,-4));$db->limit($start.",".$_rowperpage);
-	if(@$_GET["sort"] != "") $db->order($_GET["sort"]);
+	if(@$_GET["sort"] == "") $_GET["sort"] = "id DESC";
+	$db->order($_GET["sort"]);
 	$suppliers = $db->fetch_data(true);
 ?>
 

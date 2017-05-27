@@ -53,7 +53,8 @@
 	
 	$db->addtable("pokja_ulp");
 	if($whereclause != "") $db->awhere(substr($whereclause,0,-4));$db->limit($start.",".$_rowperpage);
-	if(@$_GET["sort"] != "") $db->order($_GET["sort"]);
+	if(@$_GET["sort"] == "") $_GET["sort"] = "id DESC";
+	$db->order($_GET["sort"]);
 	$pokja_ulp = $db->fetch_data(true);
 ?>
 

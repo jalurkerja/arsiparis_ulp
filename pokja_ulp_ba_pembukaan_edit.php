@@ -50,7 +50,7 @@
 	<?=$f->input("save","Simpan","type='submit'");?> 
 	<?=$f->input("back","Kembali","type='button' onclick=\"window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';\"");?>
 	<?=$f->input("btn_download","Unduh Dokumen","type='button' onclick='download_file(\"".$_GET["id"]."\");'");?>
-	<?=$f->input("btn_ba_pembukaan","Buat BA Evaluasi Dan Penelitian Dokumen Penawaran","type='button' onclick='window.location=\"ba_evaluasi_dok_add.php?procurement_work_id=".$procurement_work_id."\";'");?>
+	<?=$f->input("btn_ba_pembukaan","Buat BA Evaluasi Dan Penelitian Dokumen Penawaran","type='button' onclick='window.location=\"ba_evaluasi_dok_add.php?pokja_ulp_id=".$_GET["id"]."\";'");?>
 <?=$f->end();?>
 <?php
 	$ba_pembukaan_nomor = $db->fetch_single_data("pokja_ulp","ba_pembukaan_nomor",array("id" => $_GET["id"]));

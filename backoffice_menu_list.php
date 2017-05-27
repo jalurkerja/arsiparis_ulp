@@ -41,7 +41,8 @@
 	
 	$db->addtable("backoffice_menu");
 	if($whereclause != "") $db->awhere(substr($whereclause,0,-4));$db->limit($start.",".$_rowperpage);
-	if(@$_GET["sort"] != "") $db->order($_GET["sort"]);
+	if(@$_GET["sort"] == "") $_GET["sort"] = "id DESC";
+	$db->order($_GET["sort"]);
 	$backoffice_menu = $db->fetch_data(true);
 ?>
 
