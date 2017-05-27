@@ -31,7 +31,7 @@
 	$txt_undangan_nomor = $f->input("undangan_nomor","","style='width:300px;'");
 	$txt_undangan_tanggal = $f->input("undangan_tanggal","","type='date'");
 	$txt_undang_tgl = $f->input("undang_tgl","","type='date'");
-	$txt_undang_jam = $f->input("undang_jam","","type='time'");
+	$txt_undang_jam = $f->input("undang_jam","09:00","type='time'");
 	$txt_undang_tempat = $f->textarea("undang_tempat","Ruang Rapat BP2IP Tangerang".chr(13).chr(10)."Jl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten");
 	
 	$datastyle = "style='min-width:400px;font-style: italic;font-weight: bold;'";	

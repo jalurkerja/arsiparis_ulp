@@ -1,16 +1,13 @@
 <?php include_once "head.php";?>
 <div class="bo_title">Tambah Berita Acara Pembukaan Dokumen Penawaran</div>
 <?php
-	if($_GET["pokja_ulp_id"] > 0) $_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
+	if($_GET["pokja_ulp_id"] > 0){
+		$_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
+		if($db->fetch_single_data("pokja_ulp","ba_pembukaan_nomor",array("id"=>$_GET["pokja_ulp_id"])) > 0)
+			javascript("window.location='pokja_ulp_ba_pembukaan_edit.php?id=".$_GET["pokja_ulp_id"]."';");
+	}
 	if(isset($_POST["save"])){
-		$pokja_ulp_id = $db->fetch_single_data("pokja_ulp","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
-		if(($pokja_ulp_id * 1) == 0){
-			$db->addtable("pokja_ulp");
-			$db->addfield("procurement_work_id");	$db->addvalue($_POST["procurement_work_id"]);
-			$inserting = $db->insert();
-			$pokja_ulp_id = $inserting["insert_id"];
-		}
-		
+		$pokja_ulp_id = $db->fetch_single_data("pokja_ulp","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));		
 		if($pokja_ulp_id > 0){
 			$db->addtable("pokja_ulp");					$db->where("id",$pokja_ulp_id);
 			$db->addfield("procurement_work_id");		$db->addvalue($_POST["procurement_work_id"]);
@@ -26,7 +23,7 @@
 				javascript("alert('Saving data failed');");
 			}
 		} else {
-			javascript("alert('Saving data failed');");
+			javascript("alert('Maaf, Untuk pekerjaan ini tidak dapat di simpan karena Dokumen Pendukung sebelumnya belum dibuat');");
 		}
 	}
 	

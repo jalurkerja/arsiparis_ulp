@@ -1,7 +1,11 @@
 <?php include_once "head.php";?>
 <div class="bo_title">Tambah Surat Permintaan Penawaran Harga</div>
 <?php
-	if($_GET["pokja_ulp_id"] > 0) $_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
+	if($_GET["pokja_ulp_id"] > 0){
+		$_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
+		if($db->fetch_single_data("pokja_ulp","penawaran_nomor",array("id"=>$_GET["pokja_ulp_id"])) > 0)
+			javascript("window.location='pokja_ulp_penawaran_edit.php?id=".$_GET["pokja_ulp_id"]."';");
+	}
 	if(isset($_POST["save"])){
 		$pokja_ulp_id = $db->fetch_single_data("pokja_ulp","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
 		if(($pokja_ulp_id * 1) == 0){

@@ -1,52 +1,57 @@
 <?php include_once "head.php";?>
-<div class="bo_title">Tambah Berita Acara Evaluasi dan Penelitian Dokumen Penawaran</div>
+<div class="bo_title">Tambah Undangan Negosiasi</div>
 <?php
 	if($_GET["pokja_ulp_id"] > 0){
 		$_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
-		$ba_evaluasi_dok_id = $db->fetch_single_data("ba_evaluasi_dok","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
-		if($ba_evaluasi_dok_id > 0)
-			javascript("window.location='ba_evaluasi_dok_edit.php?id=".$ba_evaluasi_dok_id."';");
+		if($db->fetch_single_data("pokja_ulp","nego_nomor",array("id"=>$_GET["pokja_ulp_id"])) > 0)
+			javascript("window.location='pokja_ulp_nego_edit.php?id=".$_GET["pokja_ulp_id"]."';");
 	}
-	
 	if(isset($_POST["save"])){
-		$db->addtable("ba_evaluasi_dok");$db->where("procurement_work_id",$_POST["procurement_work_id"]);
-		if(count($db->fetch_data(true)) > 0){
-			javascript("alert('Berita Acara Evaluasi dan Penelitian Dokumen Penawaran untuk pekerjaan yang dipilih sudah pernah di buat sebelumnya');");
-		}else{
-			$ba_evaluasi_dok_id = "";
-			foreach($_POST["supplier_id"] as $key => $supplier_id){
-				$db->addtable("ba_evaluasi_dok");	
-				$db->addfield("procurement_work_id");	$db->addvalue($_POST["procurement_work_id"]);
-				$db->addfield("supplier_id");			$db->addvalue($supplier_id);
-				$db->addfield("nomor");					$db->addvalue($_POST["nomor"]);
-				$db->addfield("tanggal");				$db->addvalue($_POST["tanggal"]);
-				$db->addfield("harga");					$db->addvalue($_POST["harga"][$key]);
-				$db->addfield("updated_at");			$db->addvalue(date("Y-m-d H:i:s"));
-				$db->addfield("updated_by");			$db->addvalue($__username);
-				$inserting = $db->insert();
-				if($ba_evaluasi_dok_id == "") $ba_evaluasi_dok_id = $inserting["insert_id"];
+		$pokja_ulp_id = $db->fetch_single_data("pokja_ulp","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
+		if($pokja_ulp_id > 0){
+			$db->addtable("pokja_ulp");				$db->where("id",$pokja_ulp_id);
+			$db->addfield("procurement_work_id");	$db->addvalue($_POST["procurement_work_id"]);
+			$db->addfield("nego_nomor");			$db->addvalue($_POST["nego_nomor"]);
+			$db->addfield("nego_tanggal");			$db->addvalue($_POST["nego_tanggal"]);
+			$db->addfield("nego_supplier_ids");		$db->addvalue(sel_to_pipe($_POST["supplier_id"]));
+			$db->addfield("nego_undang_tgl");		$db->addvalue($_POST["nego_undang_tgl"]);
+			$db->addfield("nego_undang_jam");		$db->addvalue($_POST["nego_undang_jam"]);
+			$db->addfield("nego_undang_tempat");	$db->addvalue($_POST["nego_undang_tempat"]);
+			$db->addfield("nego_updated_at");		$db->addvalue(date("Y-m-d H:i:s"));
+			$db->addfield("nego_updated_by");		$db->addvalue($__username);
+			$inserting = $db->update();
+			if($inserting["affected_rows"] >= 0){
+				javascript("alert('Data Saved');");
+				javascript("window.location='pokja_ulp_nego_edit.php?id=".$pokja_ulp_id."';");
+			} else {
+				javascript("alert('Saving data failed');");
 			}
-			javascript("alert('Data Saved');");
-			javascript("window.location='ba_evaluasi_dok_edit.php?id=".$ba_evaluasi_dok_id."';");
+		} else {
+			javascript("alert('Maaf, Untuk pekerjaan ini tidak dapat di simpan karena Dokumen Pendukung sebelumnya belum dibuat');");
 		}
 	}
 	
-	$sel_procurement_work_id = $f->select_window("procurement_work_id","Pekerjaan","","procurement_works","id","name","win_procurement_works.php");
-	$txt_nomor = $f->input("nomor","","style='width:300px;'");
-	$txt_tanggal = $f->input("tanggal","","type='date'");
+	$sel_procurement_work_id = $f->select_window("procurement_work_id","Pekerjaan",@$_POST["procurement_work_id"],"procurement_works","id","name","win_procurement_works.php");
+	$txt_nego_nomor = $f->input("nego_nomor","","style='width:300px;'");
+	$txt_nego_tanggal = $f->input("nego_tanggal","","type='date'");
+	$txt_nego_undang_tgl = $f->input("nego_undang_tgl","","type='date'");
+	$txt_nego_undang_jam = $f->input("nego_undang_jam","09:00","type='time'");
+	$txt_nego_undang_tempat = $f->textarea("nego_undang_tempat","Ruang Rapat BP2IP Tangerang".chr(13).chr(10)."Jl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten");
 	
 	$datastyle = "style='min-width:400px;font-style: italic;font-weight: bold;'";	
 	
 	$plusminbutton = $f->input("addrow","+","type='button' style='width:25px' onclick=\"adding_row('detail_area','row_detail_');\"")."&nbsp;";
 	$plusminbutton .= $f->input("subrow","-","type='button' style='width:25px' onclick=\"substract_row('detail_area','row_detail_');\"");
 	$sel_supplier = $f->select("supplier_id[0]",$db->fetch_select_data("suppliers","id","name",array(),array("name")),"");
-	$txt_harga = $f->input("harga[0]","","type='number'");
 ?>
 <?=$f->start("","POST","","enctype='multipart/form-data'");?>
 	<?=$t->start("","editor_content");?>
 		<?=$t->row(array("Nama Pekerjaan",$sel_procurement_work_id));?>
-        <?=$t->row(array("Nomor Dokumen Berita Acara",$txt_nomor));?>
-        <?=$t->row(array("Tanggal Dokumen",$txt_tanggal));?>
+        <?=$t->row(array("Nomor Surat Undangan",$txt_nego_nomor));?>
+        <?=$t->row(array("Tanggal Surat Undangan",$txt_nego_tanggal));?>
+        <?=$t->row(array("Diundang pada tanggal",$txt_nego_undang_tgl));?>
+        <?=$t->row(array("Diundang pada jam",$txt_nego_undang_jam));?>
+        <?=$t->row(array("Diundang bertempat di",$txt_nego_undang_tempat));?>
         <?=$t->row(array("Kategori Pekerjaan","<div id='work_category' ".$datastyle."></div>"));?>
         <?=$t->row(array("Nomor Surat Penetapan HPS","<div id='hps_nomor' ".$datastyle."></div>"));?>
         <?=$t->row(array("HPS","<div id='hps_nominal' ".$datastyle."></div>"));?>
@@ -57,8 +62,8 @@
 	<?=$t->end();?>
 	<br><b>Penyedia Barang/Jasa:</b></br>
 	<?=$t->start("width='100%'","detail_area","editor_content_2");?>
-        <?=$t->row(array($plusminbutton."<br>No.","Penyedia Barang/Jasa","Harga Penawaran"),array("nowrap style='font-weight:bold;font-size:14px;text-align:center;'"));?>
-		<?=$t->row(array("<div id=\"firstno\">1</div>",$sel_supplier,$txt_harga),array("nowrap style='font-weight:bold;font-size:14px;text-align:center;'"),"id=\"row_detail_0\"");?>
+        <?=$t->row(array($plusminbutton."<br>No.","Penyedia Barang/Jasa"),array("nowrap style='font-weight:bold;font-size:14px;text-align:center;'"));?>
+		<?=$t->row(array("<div id=\"firstno\">1</div>",$sel_supplier),array("nowrap style='font-weight:bold;font-size:14px;text-align:center;'"),"id=\"row_detail_0\"");?>
 	<?=$t->end();?>
 	<br>
 	<?=$f->input("save","Simpan","type='submit'");?> <?=$f->input("back","Kembali","type='button' onclick=\"window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';\"");?>
@@ -85,6 +90,14 @@
 		document.getElementById("ppk_nip").innerHTML = "<?=$data["ppk_nip"];?>";
 	</script>
 <?php
+		$db->addtable("ba_evaluasi_dok"); $db->where("procurement_work_id",$_POST["procurement_work_id"]); $db->order("id");
+		foreach($db->fetch_data(true) as $key => $data){
+			?><script>
+				document.getElementById("supplier_id[<?=$key;?>]").value = "<?=$data["supplier_id"];?>";
+				adding_row('detail_area','row_detail_');
+			</script><?php
+		}
+		?><script> substract_row('detail_area','row_detail_'); </script><?php
 	}
 ?>
 <?php include_once "footer.php";?>
