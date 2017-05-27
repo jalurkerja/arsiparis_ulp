@@ -50,8 +50,7 @@
 	
 	$db->addtable("users");
 	if($whereclause != "") $db->awhere(substr($whereclause,0,-4));$db->limit($start.",".$_rowperpage);
-	if(@$_GET["sort"] == "") $_GET["sort"] = "id DESC";
-	$db->order($_GET["sort"]);
+	if(@$_GET["sort"] != "") $db->order($_GET["sort"]);
 	$users = $db->fetch_data(true);
 ?>
 	<?=$f->input("add","Tambah","type='button' onclick=\"window.location='users_add.php';\"");?>
