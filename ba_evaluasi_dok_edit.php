@@ -3,14 +3,14 @@
 <?php $procurement_work_id = $db->fetch_single_data("ba_evaluasi_dok","procurement_work_id",array("id"=>$_GET["id"])); ?>
 <script>
 	function download_file(id){
-		window.open("ba_evaluasi_dok_view.php.php?id=" + id);
+		window.open("ba_evaluasi_dok_view.php?id=" + id);
 	}
 	function download_all_file(){
 		if(confirm("Aplikasi ini akan mengunduh beberapa Dokumen sekaligus. Lanjutkan?")){
 			<?php
 				$db->addtable("ba_evaluasi_dok"); $db->where("procurement_work_id",$procurement_work_id); $db->order("id");
 				foreach($db->fetch_data(true) as $key => $data){
-					?> window.open("ba_evaluasi_dok_view.php.php?id=<?=$data["id"];?>"); <?php 
+					?> window.open("ba_evaluasi_dok_view.php?id=<?=$data["id"];?>"); <?php 
 				} 
 			?>
 		}
