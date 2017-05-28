@@ -42,5 +42,5 @@
 	array_push($arr2,format_tanggal($db->fetch_single_data("pokja_ulp","penawaran_tanggal",array("id"=>$pokja_ulp_id))));
 	array_push($arr2,$procurement_work_pokja_details);
 	
-	echo str_replace($arr1,$arr2,read_file("htmls/doc_08_".$page.".html"));
+	echo str_replace($arr1,$arr2,read_file("htmls/doc_10_".$page.".html"));
 ?>

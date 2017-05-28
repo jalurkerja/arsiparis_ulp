@@ -458,7 +458,7 @@ CREATE TABLE `pokja_ulp` (
 
 LOCK TABLES `pokja_ulp` WRITE;
 /*!40000 ALTER TABLE `pokja_ulp` DISABLE KEYS */;
-INSERT INTO `pokja_ulp` VALUES (1,2,'01/ULP/C/56/BP2IP-2017','2017-02-23','|1||2||4||5||13||14||15|','2017-02-24','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-23 16:55:36','superuser','02/ULP/C/56/BP2IP-2017','2017-02-27','|1||2||4||5|','2017-02-28','2017-05-22 08:31:42','superuser','03/ULP/C/56/BP2IP-2017','2017-02-28','2017-05-28 05:54:53','superuser','04/ULP/C/56/BP2IP-2017','2017-03-01','2017-05-28 05:57:21','superuser','06/ULP/C/56/BP2IP-2017','2017-03-02','|1||2||4|','2017-03-03','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-28 07:16:02','superuser','08/ULP/C/56/BP2IP-2017','2017-03-06',1,'2017-05-28 07:48:38','superuser','09/ULP/C/56/BP2IP-2017','2017-03-06','2017-05-28 08:01:41','superuser','','0000-00-00','0000-00-00 00:00:00','','0000-00-00','2017-05-28 01:01:41');
+INSERT INTO `pokja_ulp` VALUES (1,2,'01/ULP/C/56/BP2IP-2017','2017-02-23','|1||2||4||5||13||14||15|','2017-02-24','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-23 16:55:36','superuser','02/ULP/C/56/BP2IP-2017','2017-02-27','|1||2||4||5|','2017-02-28','2017-05-22 08:31:42','superuser','03/ULP/C/56/BP2IP-2017','2017-02-28','2017-05-28 05:54:53','superuser','04/ULP/C/56/BP2IP-2017','2017-03-01','2017-05-28 05:57:21','superuser','06/ULP/C/56/BP2IP-2017','2017-03-02','|1||2||4|','2017-03-03','09:00:00','Ruang Rapat BP2IP Tangerang\r\nJl. Raya Karangserang No. 1 Kec. Sukadiri Kab. Tangerang Banten','2017-05-28 07:16:02','superuser','08/ULP/C/56/BP2IP-2017','2017-03-06',1,'2017-05-28 07:48:38','superuser','09/ULP/C/56/BP2IP-2017','2017-03-06','2017-05-28 08:01:41','superuser','05/ULP/C/56/BP2IP-2017','2017-03-01','2017-05-28 08:41:03','superuser','0000-00-00','2017-05-28 01:41:03');
 /*!40000 ALTER TABLE `pokja_ulp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -918,4 +918,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-28  8:34:56
+-- Dump completed on 2017-05-28  8:43:12

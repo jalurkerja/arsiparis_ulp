@@ -6,7 +6,6 @@
 			$db->addtable("pokja_ulp");				$db->where("id",$_GET["deleting"]);
 			$db->addfield("ba_evaluasi_nomor");			$db->addvalue("");
 			$db->addfield("ba_evaluasi_tanggal");		$db->addvalue("");
-			$db->addfield("ba_evaluasi_supplier_id");	$db->addvalue("");
 			$db->addfield("ba_evaluasi_updated_at");	$db->addvalue("");
 			$db->addfield("ba_evaluasi_updated_by");	$db->addvalue("");
 			$db->update();
