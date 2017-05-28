@@ -36,7 +36,7 @@
 				echo "<ul class='menu_list' style='list-style-type:none'>";
 				echo "<li><div>".$f->input("is_check[".$menu["id"]."]","1","type='checkbox' ".$checked).$menu["name"];
 				echo "<div style='float:right;'>".$f->input("is_writable[".$menu["id"]."]","1","type='checkbox' ".$is_writable_checked)."Writeable</div></div></li>";
-				$db->addtable("backoffice_menu"); $db->addfield("id,name"); $db->where("parent_id",$menu["id"]); $db->order("seqno");
+				$db->addtable("backoffice_menu"); $db->addfield("id,name"); $db->where("parent_id",$menu["id"]); $db->where("is_active","0","i",">"); $db->order("seqno");
 				$arrsubmenu = $db->fetch_data(true);
 				if(count($arrsubmenu) > 0){
 					echo "<ul class='menu_list' style='list-style-type:none'>";

@@ -4,10 +4,11 @@
 		$procurement_work_id = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["deleting"]));
 		if($db->fetch_single_data("pokja_ulp","ba_evaluasi_nomor",array("id"=>$_GET["deleting"])) == ""){
 			$db->addtable("pokja_ulp");				$db->where("id",$_GET["deleting"]);
-			$db->addfield("laporan_nomor");			$db->addvalue("");
-			$db->addfield("laporan_tanggal");		$db->addvalue("");
-			$db->addfield("laporan_updated_at");	$db->addvalue("");
-			$db->addfield("laporan_updated_by");	$db->addvalue("");
+			$db->addfield("ba_evaluasi_nomor");			$db->addvalue("");
+			$db->addfield("ba_evaluasi_tanggal");		$db->addvalue("");
+			$db->addfield("ba_evaluasi_supplier_id");	$db->addvalue("");
+			$db->addfield("ba_evaluasi_updated_at");	$db->addvalue("");
+			$db->addfield("ba_evaluasi_updated_by");	$db->addvalue("");
 			$db->update();
 			?> <script> window.location="?";</script> <?php
 		} else {
@@ -15,7 +16,7 @@
 		}
 	}
 ?>
-<div class="bo_title">Laporan Hasil Pengadaan</div>
+<div class="bo_title">Berita Acara Evaluasi Penawaran</div>
 <div id="bo_expand" onclick="toogle_bo_filter();">[+] View Filter</div>
 <div id="bo_filter">
 	<div id="bo_filter_container">
@@ -23,12 +24,12 @@
 			<?=$t->start();?>
 			<?php
 				$procurement_work_id = $f->select("procurement_work_id",$db->fetch_select_data("procurement_works","id","name",array(),array("id DESC"),"",true),@$_GET["procurement_work_id"],"style='height:22px;'");
-				$laporan_nomor = $f->input("laporan_nomor",$_GET["laporan_nomor"]);
-				$laporan_tanggal = $f->input("laporan_tanggal",$_GET["laporan_tanggal"],"type='date'");
+				$ba_evaluasi_nomor = $f->input("ba_evaluasi_nomor",$_GET["ba_evaluasi_nomor"]);
+				$ba_evaluasi_tanggal = $f->input("ba_evaluasi_tanggal",$_GET["ba_evaluasi_tanggal"],"type='date'");
 			?>
 			     <?=$t->row(array("Nama Pekerjaan Pengadaan",$procurement_work_id));?>
-			     <?=$t->row(array("Nomor Undangan",$laporan_nomor));?>
-			     <?=$t->row(array("Tanggal Undangan",$laporan_tanggal));?>
+			     <?=$t->row(array("Nomor Undangan",$ba_evaluasi_nomor));?>
+			     <?=$t->row(array("Tanggal Undangan",$ba_evaluasi_tanggal));?>
            
 			<?=$t->end();?>
 			<?=$f->input("page","1","type='hidden'");?>
@@ -40,10 +41,10 @@
 </div>
 
 <?php
-	$whereclause = "laporan_nomor <> '' AND ";
+	$whereclause = "ba_evaluasi_nomor <> '' AND ";
 	if(@$_GET["procurement_work_id"]!="") 	$whereclause .= "procurement_work_id = '".$_GET["procurement_work_id"]."' AND ";
-	if(@$_GET["laporan_nomor"]!="") 	$whereclause .= "laporan_nomor LIKE '%".$_GET["laporan_nomor"]."%' AND ";
-	if(@$_GET["laporan_tanggal"]!="") 	$whereclause .= "laporan_tanggal LIKE '%".$_GET["laporan_tanggal"]."%' AND ";
+	if(@$_GET["ba_evaluasi_nomor"]!="") 	$whereclause .= "ba_evaluasi_nomor LIKE '%".$_GET["ba_evaluasi_nomor"]."%' AND ";
+	if(@$_GET["ba_evaluasi_tanggal"]!="") 	$whereclause .= "ba_evaluasi_tanggal LIKE '%".$_GET["ba_evaluasi_tanggal"]."%' AND ";
    	
 	$db->addtable("pokja_ulp");
 	if($whereclause != "") $db->awhere(substr($whereclause,0,-4));$db->limit($_max_counting);
@@ -58,7 +59,7 @@
 	$pokja_ulp = $db->fetch_data(true);
 ?>
 
-	<?=$f->input("add","Tambah","type='button' onclick=\"window.location='pokja_ulp_laporan_add.php';\"");?>
+	<?=$f->input("add","Tambah","type='button' onclick=\"window.location='pokja_ulp_ba_evaluasi_add.php';\"");?>
 	<?=$paging;?>
 	<?=$t->start("","data_content");?>
 	<?=$t->header(array("",
@@ -74,7 +75,7 @@
 						"HPS"));?>
 	<?php foreach($pokja_ulp as $no => $_pokja_ulp){ ?>
 		<?php
-			$actions = "<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">Ubah</a> |
+			$actions = "<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">Ubah</a> |
 						<a href='#' onclick=\"if(confirm('Are You sure to delete this data?')){window.location='?deleting=".$_pokja_ulp["id"]."';}\">Hapus</a>
 						";
             $work_category_id = $db->fetch_single_data("procurement_works","work_category_id",array("id"=>$_pokja_ulp["procurement_work_id"]));
@@ -85,15 +86,16 @@
 			$work_days = $db->fetch_single_data("procurement_works","work_days",array("id"=>$_pokja_ulp["procurement_work_id"]));
 			$hps_nominal = $db->fetch_single_data("procurement_works","hps_nominal",array("id"=>$_pokja_ulp["procurement_work_id"]));
 			$procurement_work = $db->fetch_single_data("procurement_works","name",array("id"=>$_pokja_ulp["procurement_work_id"]));
+			$supplier = $db->fetch_single_data("suppliers","name",array("id"=>$_pokja_ulp["supplier_id"]));
 		?>
 		<?=$t->row(
 					array($actions,
 						$no+$start+1,
-						"<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">".$_pokja_ulp["id"]."</a>",
-						"<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">".$_pokja_ulp["laporan_nomor"]."</a>",
-						"<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">".format_tanggal($_pokja_ulp["laporan_tanggal"])."</a>",
-						"<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">".$work_category."</a>",
-                        "<a href=\"pokja_ulp_laporan_edit.php?id=".$_pokja_ulp["id"]."\">".$procurement_work."</a>",
+						"<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">".$_pokja_ulp["id"]."</a>",
+						"<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">".$_pokja_ulp["ba_evaluasi_nomor"]."</a>",
+						"<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">".format_tanggal($_pokja_ulp["ba_evaluasi_tanggal"])."</a>",
+						"<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">".$work_category."</a>",
+                        "<a href=\"pokja_ulp_ba_evaluasi_edit.php?id=".$_pokja_ulp["id"]."\">".$procurement_work."</a>",
                         $ppk_name."<br>".$ppk_nip,
                         $tahun_anggaran,
                         $work_days,
