@@ -1,21 +1,21 @@
 <?php include_once "head.php";?>
-<div class="bo_title">Tambah Berita Acara Evaluasi dan Penelitian Dokumen Penawaran</div>
+<div class="bo_title">Tambah Berita Acara Negosiasi Harga</div>
 <?php
 	if($_GET["pokja_ulp_id"] > 0){
 		$_POST["procurement_work_id"] = $db->fetch_single_data("pokja_ulp","procurement_work_id",array("id"=>$_GET["pokja_ulp_id"]));
-		$ba_evaluasi_dok_id = $db->fetch_single_data("ba_evaluasi_dok","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
-		if($ba_evaluasi_dok_id > 0)
-			javascript("window.location='ba_evaluasi_dok_edit.php?id=".$ba_evaluasi_dok_id."';");
+		$ba_nego_id = $db->fetch_single_data("ba_nego","id",array("procurement_work_id"=>$_POST["procurement_work_id"]));
+		if($ba_nego_id > 0)
+			javascript("window.location='ba_nego_edit.php?id=".$ba_nego_id."';");
 	}
 	
 	if(isset($_POST["save"])){
-		$db->addtable("ba_evaluasi_dok");$db->where("procurement_work_id",$_POST["procurement_work_id"]);
+		$db->addtable("ba_nego");$db->where("procurement_work_id",$_POST["procurement_work_id"]);
 		if(count($db->fetch_data(true)) > 0){
-			javascript("alert('Berita Acara Evaluasi dan Penelitian Dokumen Penawaran untuk pekerjaan yang dipilih sudah pernah di buat sebelumnya');");
+			javascript("alert('Berita Acara Negosiasi Harga untuk pekerjaan yang dipilih sudah pernah di buat sebelumnya');");
 		}else{
-			$ba_evaluasi_dok_id = "";
+			$ba_nego_id = "";
 			foreach($_POST["supplier_id"] as $key => $supplier_id){
-				$db->addtable("ba_evaluasi_dok");	
+				$db->addtable("ba_nego");	
 				$db->addfield("procurement_work_id");	$db->addvalue($_POST["procurement_work_id"]);
 				$db->addfield("supplier_id");			$db->addvalue($supplier_id);
 				$db->addfield("nomor");					$db->addvalue($_POST["nomor"]);
@@ -24,10 +24,10 @@
 				$db->addfield("updated_at");			$db->addvalue(date("Y-m-d H:i:s"));
 				$db->addfield("updated_by");			$db->addvalue($__username);
 				$inserting = $db->insert();
-				if($ba_evaluasi_dok_id == "") $ba_evaluasi_dok_id = $inserting["insert_id"];
+				if($ba_nego_id == "") $ba_nego_id = $inserting["insert_id"];
 			}
 			javascript("alert('Data Saved');");
-			javascript("window.location='ba_evaluasi_dok_edit.php?id=".$ba_evaluasi_dok_id."';");
+			javascript("window.location='ba_nego_edit.php?id=".$ba_nego_id."';");
 		}
 	}
 	
@@ -69,7 +69,7 @@
 		$procurement_work = $db->fetch_single_data("procurement_works","name",array("id" => $procurement_work_id));
 		$db->addtable("procurement_works"); $db->where("id",$procurement_work_id);$db->limit(1);$data = $db->fetch_data();
 		$work_category = $db->fetch_single_data("work_categories","name",array("id" => $data["work_category_id"]));
-		$penawaran_supplier_ids = pipetoarray($db->fetch_single_data("pokja_ulp","penawaran_supplier_ids",array("id" => $_GET["pokja_ulp_id"])));
+		$nego_supplier_ids = pipetoarray($db->fetch_single_data("pokja_ulp","nego_supplier_ids",array("id" => $_GET["pokja_ulp_id"])));
 ?>
 	<script>	
 		document.getElementById("sw_caption_procurement_work_id").parentNode.childNodes[1].childNodes[0].style.display = "none";
@@ -85,7 +85,7 @@
 		document.getElementById("ppk_nip").innerHTML = "<?=$data["ppk_nip"];?>";
 	</script>
 <?php
-		foreach($penawaran_supplier_ids as $key => $supplier_id){
+		foreach($nego_supplier_ids as $key => $supplier_id){
 			?><script>
 				document.getElementById("supplier_id[<?=$key;?>]").value = "<?=$supplier_id;?>";
 				adding_row('detail_area','row_detail_');
