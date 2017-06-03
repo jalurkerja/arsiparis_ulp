@@ -27,7 +27,6 @@
 			if($spk_id > 0){
 				$db->where("procurement_work_id",$_POST["procurement_work_id"]);
 				$inserting = $db->update();
-				$spk_id = $inserting["insert_id"];
 			} else {
 				$db->addfield("procurement_work_id");	$db->addvalue($_POST["procurement_work_id"]);
 				$inserting = $db->insert();
