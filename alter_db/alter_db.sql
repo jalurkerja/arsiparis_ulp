@@ -1,0 +1,1 @@
+UPDATE backoffice_menu SET is_active='0' WHERE name LIKE 'BA Serah Terima Operasional dari PPK ke KPA';
