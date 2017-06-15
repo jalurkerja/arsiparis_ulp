@@ -1,8 +1,29 @@
 <html>
 <head>
-	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
 </head>
 <body style="margin-left:-20px; ">
+	<!--X
+	pokja_ulp_laporan_view.php
+	{laporan_nomor}
+	{laporan_tanggal}
+	{ba_hasil_nomor}
+	{ba_hasil_tanggal}
+	{ba_evaluasi_doc_nomor}
+	{ba_evaluasi_doc_tanggal}
+	{ba_nego_nomor}
+	{ba_nego_tanggal}
+	{ba_nego_harga}
+	{ba_nego_harga_sebut}
+	{supplier_name}
+	{supplier_address}
+	{supplier_npwp}
+	{procurement_work_name}
+	{procurement_work_tahun_anggaran}
+	{procurement_work_sumber_pendanaan}
+	{procurement_work_pokja_name_1}
+	{procurement_work_pokja_nip_1}
+	-->
 	<table width="650" style="font-size:14.5;font-family:Trebuchet MS;" align="center">
 		<tr>
 			<td style="text-align:center;font-size:16;font-family:Arial;"><b>UNIT LAYANAN PENGADAAN BARANG DAN JASA<br>BALAI PENDIDIKAN DAN PELATIHAN ILMU PELAYARAN (BP2IP) TANGERANG</b><br><p style="font-size:13">Jl. Raya Karang Serang No. 1 Kec. Sukadiri Kab. Tangerang 15530 Prop. Banten<br>Telp. 021 - 59370327, 59370328, 59370329 Faks. 021-59370330, 36841863<br><hr size="5"><br>
@@ -29,7 +50,7 @@
 						<td colspan="4">
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr style="vertical-align:top">
-									<td>1.</td><td style="text-align:justify">Menunjuk berita acara evaluasi dokumen penawaran No. {laporan_nomor} tanggal {1} {Maret} 2017 dan berita acara negosiasi No. 07/ULP/C/{56}/BP2IP-2017 tanggal {3} {Maret} 2017 dan berita acara hasil pengadaan langsung No. 08/ULP/C/{56}/BP2IP-2017 tanggal {6} {Maret} 2017</td>
+									<td>1.</td><td style="text-align:justify">Menunjuk berita acara evaluasi dokumen penawaran No. {ba_evaluasi_doc_nomor} tanggal {ba_evaluasi_doc_tanggal} dan berita acara negosiasi No. {ba_nego_nomor} tanggal {ba_nego_tanggal} dan berita acara hasil pengadaan langsung No. {ba_hasil_nomor} tanggal {ba_hasil_tanggal}</td>
 								</tr>
 							</table>
 						</td>
@@ -38,7 +59,7 @@
 						<td colspan="4">
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr style="vertical-align:top">
-									<td>2.</td><td style="text-align:justify">Pekerjaan {Pengadaan Kursi Makan Ruang Makan} Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, berdasarkan berita acara tersebut perusahaan yang ditetapkan sebagai pemenang untuk pengadaan langsung adalah:<br><br>
+									<td>2.</td><td style="text-align:justify">Pekerjaan {procurement_work_name} Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran {procurement_work_tahun_anggaran}, berdasarkan berita acara tersebut perusahaan yang ditetapkan sebagai pemenang untuk pengadaan langsung adalah:<br><br>
 										<table style="font-size:14.5;font-family:Trebuchet MS;">
 											<tr style="vertical-align:top">
 												<td>Nama Perusahaan</td><td>:</td><td>{supplier_name}</td>
@@ -47,10 +68,10 @@
 												<td>Alamat</td><td>:</td><td>{supplier_address}	</td>
 											</tr>
 											<tr>
-												<td>NPWP</td><td>:</td><td>{31.657.504.2-451.000}</td>
+												<td>NPWP</td><td>:</td><td>{supplier_npwp}</td>
 											</tr>
 											<tr style="vertical-align:top">
-												<td>Harga Negosiasi</td><td>:</td><td>Rp. {172.562.500,-} ({seratus tujuh puluh dua juta lima ratus enam puluh dua ribu lima ratus rupiah})</td>
+												<td>Harga Negosiasi</td><td>:</td><td>Rp. {ba_nego_harga} ({ba_nego_harga_sebut} rupiah)</td>
 											</tr>
 										</table><br>
 									</td>

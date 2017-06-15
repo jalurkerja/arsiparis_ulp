@@ -1,8 +1,26 @@
 <html>
 <head>
-	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
 </head>
 <body style="margin-left:-20px; ">
+	<!--X
+	ba_nego_view.php
+	{nomor}
+	{tanggal}
+	{sebut_hari}
+	{sebut_tanggal}
+	{harga}
+	{sebut_harga}
+	{ba_evaluasi_dok_harga}
+	{ba_evaluasi_dok_sebut_harga}
+	{supplier_name}
+	{supplier_pic}
+	{supplier_pic_position}
+	{procurement_work_name}
+	{procurement_work_sumber_pendanaan}
+	{procurement_work_tahun_anggaran}
+	{procurement_work_pokja_details}
+	-->
 	<table width="650" style="font-size:14.5;font-family:Trebuchet MS;" align="center">
 		<tr>
 			<td style="text-align:center;font-size:16;font-family:Arial;"><b>UNIT LAYANAN PENGADAAN BARANG DAN JASA<br>BALAI PENDIDIKAN DAN PELATIHAN ILMU PELAYARAN (BP2IP) TANGERANG</b><br><p style="font-size:13">Jl. Raya Karang Serang No. 1 Kec. Sukadiri Kab. Tangerang 15530 Prop. Banten<br>Telp. 021 - 59370327, 59370328, 59370329 Faks. 021-59370330, 36841863<br><hr size="5"><p style="font-size:14.5;font-family:Trebuchet MS;"><b>BERITA ACARA<br><u>NEGOSIASI HARGA</u><br>Nomor : {nomor}</p>
@@ -23,10 +41,10 @@
 						<td colspan="3"  style="text-align:justify">
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr style="vertical-align:top">
-									<td>1.</td><td></td><td style="text-align:justify">Pada hari ini, <b>{sebut_hari}</b> {sebut_tanggal}, bertempat di ruang rapat kantor Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang, saya yang bertanda tangan di bawah ini Pokja ULP Pada Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, yang diangkat dengan Surat Keputusan Kepala Unit Layanan Pengadaan No. SK.015/I/BP2IP.Tng-2017 Tanggal 3 Januari 2017, telah mengadakan rapat negosiasi harga dengan {supplier_name} untuk pekerjaan 	 Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, yang dibiayai dari anggaran DIPA Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Nomor SP DIPA-022.12.1.654603/2017 {Tanggal 20 November 2016}.</td>
+									<td>1.</td><td></td><td style="text-align:justify">Pada hari ini, <b>{sebut_hari}</b> {sebut_tanggal}, bertempat di ruang rapat kantor Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang, saya yang bertanda tangan di bawah ini Pokja ULP Pada Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, yang diangkat dengan Surat Keputusan Kepala Unit Layanan Pengadaan No. SK.015/I/BP2IP.Tng-2017 Tanggal 3 Januari 2017, telah mengadakan rapat negosiasi harga dengan {supplier_name} untuk pekerjaan 	 Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, yang dibiayai dari anggaran {procurement_work_sumber_pendanaan}.</td>
 								</tr>
 								<tr style="vertical-align:top">
-									<td><br>2.</td><td><br></td><td style="text-align:justify"><br>Dalam melakukan pembahasan penentuan negosiasi harga, Panitia Pengadaan Barang/Jasa berpedoman pada Peraturan Presiden Republik Indonesia Nomor 54 Tahun 2010 tentang Pengadaan Barang/Jasa Pemerintah Beserta Perubahannya, sehingga dapat diperoleh harga yang dapat dipertanggungjawabkan. Dari pembahasan yang telah dilakukan Pokja ULP dengan {CV. DUTA ASRI JAYA}, ada perubahan harga dari penawaran sebesar Rp. {harga} ({sebut_harga} rupiah) menjadi Rp. {172.562.500,-} ({seratus tujuh puluh dua juta lima ratus enam puluh dua ribu lima ratus rupiah}).</td>
+									<td><br>2.</td><td><br></td><td style="text-align:justify"><br>Dalam melakukan pembahasan penentuan negosiasi harga, Panitia Pengadaan Barang/Jasa berpedoman pada Peraturan Presiden Republik Indonesia Nomor 54 Tahun 2010 tentang Pengadaan Barang/Jasa Pemerintah Beserta Perubahannya, sehingga dapat diperoleh harga yang dapat dipertanggungjawabkan. Dari pembahasan yang telah dilakukan Pokja ULP dengan {supplier_name}, ada perubahan harga dari penawaran sebesar Rp. {ba_evaluasi_dok_harga} ({ba_evaluasi_dok_sebut_harga} rupiah) menjadi Rp. {harga} ({sebut_harga} rupiah).</td>
 								</tr>
 								<tr style="vertical-align:top">
 									<td><br>3.</td><td><br></td><td style="text-align:justify"><br>Demikian Berita Acara ini dibuat untuk dapat digunakan sebagaimana mestinya.</td>
@@ -49,7 +67,7 @@
 						<td colspan="3"><u>Penyedia :
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr>
-									<td style="vertical-align:top">1.</td><td><u>RIAN SAIFUDDIN</u><br>Direktur {supplier_name}</td><td style="padding-left:80">....................</td>
+									<td style="vertical-align:top">1.</td><td><u>{supplier_pic}</u><br>{supplier_pic_position} {supplier_name}</td><td style="padding-left:80">....................</td>
 								</tr>
 							</table>
 						</td>

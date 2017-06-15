@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body style="margin-left:-20px; ">
+	<!--X
+	spk_view.php
+	{nomor}
+	{tanggal}
+	{pokja_ulp_undangan_nomor}
+	{pokja_ulp_undangan_tanggal}
+	{pokja_ulp_ba_hasil_nomor}
+	{pokja_ulp_ba_hasil_tanggal}
+	{ba_nego_harga}
+	{ba_nego_harga_sebut}
+	{supplier_name}
+	{supplier_pic}
+	{supplier_pic_position}
+	{procurement_work_name}
+	{procurement_work_tahun_anggaran}
+	{procurement_work_sumber_pendanaan}
+	{procurement_work_days}
+	{procurement_work_days_sebut}
+	{procurement_work_days_type}
+	{procurement_work_start}
+	{procurement_work_end}
+	{procurement_work_ppk_name}
+	{procurement_work_ppk_nip}
+	-->
+	<table  border="1" rules="all" width="650" align="center" style="font-size:14.5;font-family:Trebuchet MS;">
+		<tr>
+			<td rowspan="2" width="200"></td><td>SATUAN KERJA : BP2IP TANGERANG</td>
+		</tr>
+		<tr>
+			<td>NOMOR DAN TANGGAL SPK : {nomor} tanggal {tanggal}<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">Halaman 1 dari 6</td><td> </td></tr>
+		<tr>
+			<td rowspan="3" style="text-align:center">PAKET PEKERJAAN :<br>{procurement_work_name}</td><td>NOMOR DAN TANGGAL SURAT UNDANGAN PENGADAAN LANGSUNG: {pokja_ulp_undangan_nomor} Tanggal {pokja_ulp_undangan_tanggal}<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td>NOMOR DAN TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG : {pokja_ulp_ba_hasil_nomor} Tanggal {pokja_ulp_ba_hasil_tanggal}<br><br></td>
+		</tr>
+		<tr>
+			<td>SPK ini mulai berlaku efektif terhitung sejak tanggal diterbitkannya SPK dan penyelesaian keseluruhan pekerjaan sebagaimana diatur dalam SPK ini.<br><Br></td>
+		</tr>
+		<tr>
+			<td colspan="2">SUMBER DANA: Dibebankan atas DIPA Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran {procurement_work_tahun_anggaran} Nomor SP DIPA-022.12.1.654603/2017 Tanggal 20 November 2016<br><Br></td>
+		</tr>
+		<tr>
+			<td colspan="2">NILAI PEKERJAAN : Rp. {ba_nego_harga} ({ba_nego_harga_sebut} rupiah)<br><Br></td>
+		</tr>
+		<tr>
+			<td colspan="2">WAKTU PELAKSANAAN PEKERJAAN: {procurement_work_days} ({procurement_work_days_sebut}) hari {procurement_work_days_type}, tanggal {procurement_work_start} s/d {procurement_work_end}<br><Br></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center">PEKERJAAN</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center">
+				<table width="650" border="1" rules="all" style="font-size:14.5; font-family:Trebuchet MS;" >
+					<tr style="text-align:center">
+						<td>NO</td><td>Uraian Pekerjaan</td><td>Kuantitas</td><td>Satuan<br>Ukuran</td><td>Harga satuan<br>(Rp.)</td><td>Total<br>(Rp.)</td>
+					</tr>
+					<tr>
+						<td> </td><td style="text-align:left">TERLAMPIR</td><td> </td><td> </td><td> </td><td></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:"><b>INSTRUKSI KEPADA PENYEDIA:</b> Penagihan hanya dapat dilakukan setelah penyelesaian pekerjaan yang diperintahkan dalam SPK ini dan dibuktikan dengan Berita Acara Serah Terima. Jika pekerjaan tidak dapat diselesaikan dalam jangka waktu pelaksanaan pekerjaan karena kesalahan atau kelalaian Penyedia maka Penyedia berkewajiban untuk membayar denda kepada PPK sebesar 1/1000 (satu per seribu) dari nilai SPK atau nilai bagian SPK untuk setiap hari keterlambatan.<br><br></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:"><Br>
+				<table style="text-align:center; font-size:14.5; font-family:Trebuchet MS;" width="600">
+					<Tr>
+						<td>Untuk dan atas nama BP2IP Tangerang<br>Pejabat Pembuat Komitmen<br><br><br><br><br><u>{procurement_work_ppk_name}</u><br>NIP. {procurement_work_ppk_nip}</td><td>Untuk dan atas nama Penyedia<br>{supplier_name}<br><br><br><br><br><u>{supplier_pic}</u><br>{supplier_pic_position}</td>
+					</Tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <?php
 	if($_GET["spk_id"] > 0){
 		$_POST["procurement_work_id"] = $db->fetch_single_data("spk","procurement_work_id",array("id"=>$_GET["spk_id"]));
-		if($db->fetch_single_data("spk","pemeriksaan_nomor",array("id"=>$_GET["spk_id"])) > 0)
+		if($db->fetch_single_data("spk","pemeriksaan_nomor",array("id"=>$_GET["spk_id"])) != "")
 			javascript("window.location='spk_pemeriksaan_edit.php?id=".$_GET["spk_id"]."';");
 	}
 	if(isset($_POST["save"])){

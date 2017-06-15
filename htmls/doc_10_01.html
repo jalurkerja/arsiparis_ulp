@@ -1,14 +1,29 @@
 <html>
 <head>
-	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
 </head>
 <body style="margin-left:-20px; ">
+	<!--X
+	pokja_ulp_nego_view.php
+	{nego_nomor}
+	{nego_tanggal}
+	{nego_undang_tgl_sebut_hari}
+	{nego_undang_tgl}
+	{nego_undang_jam}
+	{nego_undang_tempat}
+	{supplier_name}
+	{supplier_address}
+	{procurement_work_name}
+	{procurement_work_tahun_anggaran}
+	{procurement_work_pokja_pokja_name_1}
+	{procurement_work_pokja_pokja_nip_1}
+	-->
 	<table width="650" style="font-size:14.5;font-family:Trebuchet MS;" align="center">
 		<tr>
 			<td style="text-align:center;font-size:16;font-family:Arial;"><b>UNIT LAYANAN PENGADAAN BARANG DAN JASA<br>BALAI PENDIDIKAN DAN PELATIHAN ILMU PELAYARAN (BP2IP) TANGERANG</b><br><p style="font-size:13">Jl. Raya Karang Serang No. 1 Kec. Sukadiri Kab. Tangerang 15530 Prop. Banten<br>Telp. 021 - 59370327, 59370328, 59370329 Faks. 021-59370330, 36841863<br><hr size="5"><br>
 				<table width="650" style="font-size:14.5;font-family:Trebuchet MS;">
 					<tr>
-						<td>Nomor</td><td>:</td><td>{undangan_nomor}</td><td style="text-align:right">Tangerang, {undangan_tanggal}</td>
+						<td>Nomor</td><td>:</td><td>{nego_nomor}</td><td style="text-align:right">Tangerang, {nego_tanggal}</td>
 					</tr>
 					<tr>
 						<td>Lampiran</td><td>:</td>
@@ -29,19 +44,19 @@
 						<td colspan="4">
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr style="vertical-align:top">
-									<td>1.</td><td>Mengharap kehadiran Saudara untuk negosiasi harga untuk pekerjaan {Pengadaan Kursi Makan Ruang Makan} Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, pada :<br><br>
+									<td>1.</td><td>Mengharap kehadiran Saudara untuk negosiasi harga untuk pekerjaan {procurement_work_name} Satker Balai Pendidikan dan Pelatihan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran {procurement_work_tahun_anggaran}, pada :<br><br>
 										<table style="font-size:14.5;font-family:Trebuchet MS;">
 											<tr>
-												<td>Hari</td><td>:</td><td>{Jumat}</td>
+												<td>Hari</td><td>:</td><td>{nego_undang_tgl_sebut_hari}</td>
 											</tr>
 											<tr>
-												<td>Tanggal</td><td>:</td><td>{undang_tgl}</td>
+												<td>Tanggal</td><td>:</td><td>{nego_undang_tgl}</td>
 											</tr>
 											<tr>
-												<td>Pukul</td><td>:</td><td>{undang_jam}</td>
+												<td>Pukul</td><td>:</td><td>{nego_undang_jam}</td>
 											</tr>
 											<tr style="vertical-align:top">
-												<td>Tempat</td><td>:</td><td>{undang_tempat}</td>
+												<td>Tempat</td><td>:</td><td>{nego_undang_tempat}</td>
 											</tr>
 										</table>
 										<br>
@@ -57,7 +72,7 @@
 									<td>2.</td><td>Demikian disampaikan, atas perhatian dan kehadiran Saudara diucapkan terima kasih.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>
 										<table style="text-align:center; font-size:14.5;font-family:Trebuchet MS;" align="right">
 											<tr>
-												<td>Ketua Pokja ULP<br>Satker BP2IP Tangerang<br><br><br><br><br><br><b><u>BENNY HIDAYAT</u><br>NIP. 19770925 200912 1 001</td>
+												<td>Ketua Pokja ULP<br>Satker BP2IP Tangerang<br><br><br><br><br><br><b><u>{procurement_work_pokja_pokja_name_1}</u><br>NIP. {procurement_work_pokja_pokja_nip_1}</td>
 											</tr>
 										</table>
 										<br>

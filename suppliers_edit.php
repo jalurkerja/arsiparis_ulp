@@ -24,6 +24,7 @@
 		$db->addfield("types_of_goods");	$db->addvalue($_POST["types_of_goods"]);
 		$db->addfield("siup_category");		$db->addvalue($_POST["siup_category"]);
 		$db->addfield("siup_validity");		$db->addvalue($_POST["siup_validity"]);
+		$db->addfield("npwp");				$db->addvalue($_POST["npwp"]);
 		$db->addfield("updated_at");		$db->addvalue(date("Y-m-d H:i:s"));
 		$db->addfield("updated_by");		$db->addvalue($__username);
 		$db->addfield("updated_ip");		$db->addvalue($_SERVER["REMOTE_ADDR"]);
@@ -69,6 +70,7 @@
 	$types_of_goods		= $f->input("types_of_goods",$supplier["types_of_goods"],"size='50'");
 	$siup_category		= $f->input("siup_category",$supplier["siup_category"]);
 	$siup_validity		= $f->input("siup_validity",$supplier["siup_validity"],"type='date'");
+	$npwp				= $f->input("npwp",$supplier["npwp"]);
 	
 	$plusminbutton = $f->input("addrow","+","type='button' style='width:25px' onclick=\"adding_row('detail_area','row_detail_');\"")."&nbsp;";
 	$plusminbutton .= $f->input("subrow","-","type='button' style='width:25px' onclick=\"deleteing_last_row('".$_GET["id"]."');\"");
@@ -89,6 +91,7 @@
          <?=$t->row(array("Jenis Barang/Jasa Dagangan Utama",$types_of_goods));?>
          <?=$t->row(array("Kategori SIUP",$siup_category));?>
          <?=$t->row(array("Masa Berlaku",$siup_validity));?>
+         <?=$t->row(array("NPWP",$npwp));?>
 	<?=$t->end();?>
 	<br>
 	<b>Upload File:</b><br>

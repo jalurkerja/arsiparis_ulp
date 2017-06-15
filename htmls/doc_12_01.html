@@ -1,11 +1,30 @@
 <html>
 <head>
-	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
 </head>
 <body style="margin-left:-20px; ">
+	<!--X
+	pokja_ulp_ba_hasil_view.php
+	{ba_hasil_nomor}
+	{ba_hasil_tanggal}
+	{sebut_hari}
+	{sebut_tanggal}
+	{penawaran_nomor}
+	{penawaran_tanggal}
+	{supplier_name}
+	{supplier_address}
+	{supplier_npwp}
+	{ba_evaluasi_dok_harga}
+	{ba_nego_harga}
+	{ba_nego_harga_sebut}
+	{procurement_work_name}
+	{procurement_work_sumber_pendanaan}
+	{procurement_work_tahun_anggaran}
+	{procurement_work_pokja_details}
+	-->
 	<table width="650" style="font-size:14.5;font-family:Trebuchet MS;" align="center">
 		<tr>
-			<td style="text-align:center;font-size:16;font-family:Arial;"><b>UNIT LAYANAN PENGADAAN BARANG DAN JASA<br>BALAI PENDIDIKAN DAN PELATIHAN ILMU PELAYARAN (BP2IP) TANGERANG</b><br><p style="font-size:13">Jl. Raya Karang Serang No. 1 Kec. Sukadiri Kab. Tangerang 15530 Prop. Banten<br>Telp. 021 - 59370327, 59370328, 59370329 Faks. 021-59370330, 36841863<hr size="5"><p style="font-size:14.5;font-family:Trebuchet MS;"><b>BERITA ACARA<br><u>HASIL PENGADAAN LANGSUNG</u><br>Nomor : 08/ULP/C/{56}/BP2IP-2017</p>
+			<td style="text-align:center;font-size:16;font-family:Arial;"><b>UNIT LAYANAN PENGADAAN BARANG DAN JASA<br>BALAI PENDIDIKAN DAN PELATIHAN ILMU PELAYARAN (BP2IP) TANGERANG</b><br><p style="font-size:13">Jl. Raya Karang Serang No. 1 Kec. Sukadiri Kab. Tangerang 15530 Prop. Banten<br>Telp. 021 - 59370327, 59370328, 59370329 Faks. 021-59370330, 36841863<hr size="5"><p style="font-size:14.5;font-family:Trebuchet MS;"><b>BERITA ACARA<br><u>HASIL PENGADAAN LANGSUNG</u><br>Nomor : {ba_hasil_nomor}</p>
 				<table style="font-size:14.5;font-family:Trebuchet MS;">
 					<tr>
 						<td>Pekerjaan</td><td>:</td><td>{procurement_work_name}</td>
@@ -23,10 +42,10 @@
 						<td colspan="3"  style="text-align:justify">
 							<table style="font-size:14.5;font-family:Trebuchet MS;">
 								<tr style="vertical-align:top">
-									<td>1.</td><td></td><td style="text-align:justify">Pada hari ini, <b>{sebut_hari}</b> {sebut_tanggal}, bertempat di ruang meeting kantor Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang, saya yang bertanda tangan di bawah ini Pokja ULP pada Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran 2017, yang diangkat dengan Surat Keputusan Kepala Unit Layanan Pengadaan No. SK.015/I/BP2IP.Tng-2017 Tanggal 3 Januari 2017, telah mengadakan pengadaan langsung dengan hasil sebagai berikut:
+									<td>1.</td><td></td><td style="text-align:justify">Pada hari ini, <b>{sebut_hari}</b> {sebut_tanggal}, bertempat di ruang meeting kantor Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang, saya yang bertanda tangan di bawah ini Pokja ULP pada Satker Balai Pendidikan dan Ilmu Pelayaran (BP2IP) Tangerang Tahun Anggaran {procurement_work_tahun_anggaran}, yang diangkat dengan Surat Keputusan Kepala Unit Layanan Pengadaan No. SK.015/I/BP2IP.Tng-2017 Tanggal 3 Januari 2017, telah mengadakan pengadaan langsung dengan hasil sebagai berikut:
 										<table border="1" rules="all" width="650" style="text-align:center; font-size:14.5;font-family:Trebuchet MS;">
 											<tr>
-												<td>1</td><td>Evaluasi Administrasi</td><td>emenuhan persyaratan</td>
+												<td>1</td><td>Evaluasi Administrasi</td><td>Pemenuhan persyaratan</td>
 											</tr>
 											<tr>
 												<td></td><td>{supplier_name}</td><td>Memenuhi syarat</td>
@@ -41,13 +60,13 @@
 												<td>3</td><td>Evaluasi Harga</td><td>Harga Penawaran</td>
 											</tr>
 											<tr>
-												<td></td><td>{supplier_name}</td><td>Rp. {harga}</td>
+												<td></td><td>{supplier_name}</td><td>Rp. {ba_evaluasi_dok_harga}</td>
 											</tr>
 											<tr>
 												<td>4</td><td>Negosiasi Harga</td><td>Harga Negosiasi</td>
 											</tr>
 											<tr>
-												<td></td><td>{supplier_name}</td><td>Rp. {172.562.500,-}</td>
+												<td></td><td>{supplier_name}</td><td>Rp. {ba_nego_harga}</td>
 											</tr>
 										</table>
 									</td>
@@ -62,10 +81,10 @@
 												<td>ALAMAT	</td><td>:</td><td>{supplier_address}</td>
 											</tr>
 											<tr>
-												<td>HARGA NEGOSIASI	</td><td>:</td><td>Rp. {172.562.500,-} ({seratus tujuh puluh dua juta lima ratus enam puluh dua ribu lima ratus rupiah})</td>
+												<td>HARGA NEGOSIASI	</td><td>:</td><td>Rp. {ba_nego_harga} ({ba_nego_harga_sebut} rupiah)</td>
 											</tr>
 											<tr>
-												<td>NPWP</td><td>:</td><td>{31.657.504.2-451.000}</td>
+												<td>NPWP</td><td>:</td><td>{supplier_npwp}</td>
 											</tr>
 										</table>
 									</td>
@@ -77,7 +96,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="3"  style="text-align:justify"><br>Tangerang, {tanggal}</td>
+						<td colspan="3"  style="text-align:justify"><br>Tangerang, {ba_hasil_tanggal}</td>
 					</tr>
 					<tr>
 						<td colspan="3"  style="text-align:"><br>Pokja ULP<br>Satker BP2IP Tangerang</td>
