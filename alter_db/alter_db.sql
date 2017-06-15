@@ -1,1 +1,0 @@
-ALTER TABLE `suppliers` ADD `npwp` VARCHAR(50) NOT NULL AFTER `siup_validity`;
