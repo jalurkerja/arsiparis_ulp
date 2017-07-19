@@ -1,0 +1,1 @@
+ALTER TABLE `scanned_documents` ADD `procurement_work_id` INT NOT NULL AFTER `id`, ADD `procurement_work_name` VARCHAR(255) NOT NULL AFTER `procurement_work_id`, ADD INDEX (`procurement_work_id`);

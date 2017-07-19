@@ -2,36 +2,42 @@
 <div class="bo_title">Tambah Pekerjaan</div>
 <?php
 	if(isset($_POST["save"])){
-		$db->addtable("procurement_works");	
-		$db->addfield("work_category_id");			$db->addvalue($_POST["work_category_id"]);
-		$db->addfield("name");						$db->addvalue($_POST["name"]);
-		$db->addfield("work_start");				$db->addvalue($_POST["work_start"]);
-		$db->addfield("work_end");					$db->addvalue($_POST["work_end"]);
-		$db->addfield("work_days");					$db->addvalue($_POST["work_days"]);
-		$db->addfield("work_days_type");			$db->addvalue($_POST["work_days_type"]);
-		$db->addfield("ppk_name");					$db->addvalue($_POST["ppk_name"]);
-		$db->addfield("ppk_nip");					$db->addvalue($_POST["ppk_nip"]);
-		$db->addfield("tahun_anggaran");			$db->addvalue($_POST["tahun_anggaran"]);
-		$db->addfield("sumber_pendanaan");			$db->addvalue($_POST["sumber_pendanaan"]);
-		$db->addfield("masa_berlaku_penawaran");	$db->addvalue($_POST["masa_berlaku_penawaran"]);
-		$db->addfield("siup_penyedia");				$db->addvalue($_POST["siup_penyedia"]);
-		$db->addfield("updated_at");				$db->addvalue(date("Y-m-d H:i:s"));
-		$db->addfield("updated_by");				$db->addvalue($__username);
-		$db->addfield("updated_ip");				$db->addvalue($_SERVER["REMOTE_ADDR"]);
-		$inserting = $db->insert();
-		if($inserting["affected_rows"] >= 0){
-			$procurement_work_id = $inserting["insert_id"];
-			foreach($_POST["pokja_name"] as $key => $pokja_name){
-				$db->addtable("procurement_work_pokja");	
-				$db->addfield("procurement_work_id");	$db->addvalue($procurement_work_id);
-				$db->addfield("pokja_name");			$db->addvalue($pokja_name);
-				$db->addfield("pokja_nip");				$db->addvalue($_POST["pokja_nip"][$key]);
-				$db->insert();
-			}
-			javascript("alert('Data Saved');");
-			javascript("window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';");
+		if($db->fetch_single_data("procurement_works","id",array("name" => str_replace(" ","%",$_POST["name"]).":LIKE")) > 0){
+			javascript("alert('Nama Pekerjaan sudah pernah digunakan');");
 		} else {
-			javascript("alert('Saving data failed');");
+			$db->addtable("procurement_works");	
+			$db->addfield("work_category_id");			$db->addvalue($_POST["work_category_id"]);
+			$db->addfield("name");						$db->addvalue($_POST["name"]);
+			$db->addfield("work_start");				$db->addvalue($_POST["work_start"]);
+			$db->addfield("work_end");					$db->addvalue($_POST["work_end"]);
+			$db->addfield("work_days");					$db->addvalue($_POST["work_days"]);
+			$db->addfield("work_days_type");			$db->addvalue($_POST["work_days_type"]);
+			$db->addfield("ppk_name");					$db->addvalue($_POST["ppk_name"]);
+			$db->addfield("ppk_nip");					$db->addvalue($_POST["ppk_nip"]);
+			$db->addfield("tahun_anggaran");			$db->addvalue($_POST["tahun_anggaran"]);
+			$db->addfield("sumber_pendanaan");			$db->addvalue($_POST["sumber_pendanaan"]);
+			$db->addfield("masa_berlaku_penawaran");	$db->addvalue($_POST["masa_berlaku_penawaran"]);
+			$db->addfield("siup_penyedia");				$db->addvalue($_POST["siup_penyedia"]);
+			$db->addfield("updated_at");				$db->addvalue(date("Y-m-d H:i:s"));
+			$db->addfield("updated_by");				$db->addvalue($__username);
+			$db->addfield("updated_ip");				$db->addvalue($_SERVER["REMOTE_ADDR"]);
+			$inserting = $db->insert();
+			if($inserting["affected_rows"] >= 0){
+				$procurement_work_id = $inserting["insert_id"];
+				foreach($_POST["pokja_name"] as $key => $pokja_name){
+					if($pokja_name != ""){
+						$db->addtable("procurement_work_pokja");	
+						$db->addfield("procurement_work_id");	$db->addvalue($procurement_work_id);
+						$db->addfield("pokja_name");			$db->addvalue($pokja_name);
+						$db->addfield("pokja_nip");				$db->addvalue($_POST["pokja_nip"][$key]);
+						$db->insert();
+					}
+				}
+				javascript("alert('Data Saved');");
+				javascript("window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';");
+			} else {
+				javascript("alert('Saving data failed');");
+			}
 		}
 	}
 	

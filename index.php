@@ -18,7 +18,7 @@
 							<th nowrap>Di Update Oleh</th>
 						</tr>
 						<?php
-							$db->addtable("procurement_works");$db->order("updated_at DESC");$db->limit(20);
+							$db->addtable("procurement_works");$db->order("id DESC");$db->limit(10);
 							$db->awhere("id NOT IN (SELECT procurement_work_id FROM spk WHERE ba_bayar_nomor <> '')");
 							foreach($db->fetch_data(true) as $key => $procurement_work){
 								$id = $procurement_work["id"];
@@ -31,7 +31,18 @@
 								$updated_by_1	= "";
 								$link_1			= "";
 								
+								if($procurement_work["hps_ok"] > 0){
+									$status		= "HPS Approved";
+									$tanggal	= $procurement_work["hps_ok_at"];
+									$updated_by	= $procurement_work["hps_ok_by"];
+									$link		= "procurement_works_edit.php?id=".$id;
+								}
+								
 								if($db->fetch_single_data("dokumen_pengadaan","id",array("procurement_work_id"=>$id)) > 0){
+									$status_1		= $status;
+									$tanggal_1		= $tanggal;
+									$updated_by_1	= $updated;
+									$link_1			= $link;		
 									$status		= "Dokumen Pengadaan";
 									$tanggal	= $db->fetch_single_data("dokumen_pengadaan","updated_at",array("procurement_work_id"=>$id));
 									$updated_by	= $db->fetch_single_data("users","name",array("email"=>$db->fetch_single_data("dokumen_pengadaan","updated_by",array("procurement_work_id"=>$id))));

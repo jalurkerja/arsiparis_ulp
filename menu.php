@@ -6,7 +6,7 @@
 				<table style="background-color: rgba(255, 255, 255, 0.0);height:60px;width:100%;" cellpadding="0" cellspacing="0">
 					<tr>
 						<td nowrap width="1">
-							<img src="images/logo.jpg" style="height:52px;cursor:pointer;border:0px;" alt="<?=$__appstitle;?>" title="<?=$__appstitle;?>" onclick="window.location='index.php';">
+							<img src="images/logo-bp2ip-tng.png" style="height:52px;cursor:pointer;border:0px;" alt="<?=$__appstitle;?>" title="<?=$__appstitle;?>" onclick="window.location='index.php';">
 						</td>
 						<td style="width:30px;" align="left" nowrap>
 						<td align="left" valign="top" nowrap>

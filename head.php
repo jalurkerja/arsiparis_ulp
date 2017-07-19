@@ -6,10 +6,10 @@
 <?php if(!$_isexport){ ?>
 	<html>
 		<head>
-			<meta property="og:image" content="images/logo.jpg">
+			<meta property="og:image" content="images/logo-bp2ip-tng.png">
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 			<meta http-equiv="X-UA-Compatible" content="IE=8;" />
-			<link rel="Shortcut Icon" href="favicon.ico">
+			<link rel="Shortcut Icon" href="images/logo-bp2ip-tng.png">
 			<title id="titleid"><?=$__appstitle;?></title>
 			
 			<script src="scripts/jquery-1.10.1.min.js"></script>

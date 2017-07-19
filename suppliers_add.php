@@ -2,40 +2,44 @@
 <div class="bo_title">Tambah Supplier / Penyedia Jasa</div>
 <?php
 	if(isset($_POST["save"])){
-		$db->addtable("suppliers");	
-		$db->addfield("name");				$db->addvalue($_POST["name"]);
-		$db->addfield("work_category_ids");	$db->addvalue(sel_to_pipe($_POST["work_category_ids"]));
-		$db->addfield("address");			$db->addvalue($_POST["address"]);
-		$db->addfield("pic");				$db->addvalue($_POST["pic"]);
-		$db->addfield("pic_position");		$db->addvalue($_POST["pic_position"]);
-		$db->addfield("value_of_capital");	$db->addvalue($_POST["value_of_capital"]);
-		$db->addfield("types_of_goods");	$db->addvalue($_POST["types_of_goods"]);
-		$db->addfield("siup_category");		$db->addvalue($_POST["siup_category"]);
-		$db->addfield("siup_validity");		$db->addvalue($_POST["siup_validity"]);
-		$db->addfield("npwp");				$db->addvalue($_POST["npwp"]);
-		$db->addfield("updated_at");		$db->addvalue(date("Y-m-d H:i:s"));
-		$db->addfield("updated_by");		$db->addvalue($__username);
-		$db->addfield("updated_ip");		$db->addvalue($_SERVER["REMOTE_ADDR"]);
-		$inserting = $db->insert();
-		if($inserting["affected_rows"] >= 0){
-			$supplier_id = $inserting["insert_id"];
-			foreach($_FILES["scan_file"]["tmp_name"] as $key => $tmp_name){
-				if($tmp_name){
-					$_ext = strtolower(pathinfo($_FILES['scan_file']['name'][$key],PATHINFO_EXTENSION));
-					$file_type = $_POST["file_type"][$key];
-					$softcopy_name = $file_type."_".$supplier_id."_".$key.".".$_ext;
-					move_uploaded_file($tmp_name,"supplier_files/".$softcopy_name);
-					$db->addtable("supplier_files");
-					$db->addfield("supplier_id");	$db->addvalue($supplier_id);
-					$db->addfield("file_type");		$db->addvalue($file_type);
-					$db->addfield("filename");		$db->addvalue($softcopy_name);
-					$db->insert();
-				}
-			}
-			javascript("alert('Data Saved');");
-			javascript("window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';");
+		if($db->fetch_single_data("suppliers","id",array("name" => str_replace(array(" ","."),"%",$_POST["name"]).":LIKE")) > 0){
+			javascript("alert('Nama Perusahaan sudah pernah digunakan');");
 		} else {
-			javascript("alert('Saving data failed');");
+			$db->addtable("suppliers");	
+			$db->addfield("name");				$db->addvalue($_POST["name"]);
+			$db->addfield("work_category_ids");	$db->addvalue(sel_to_pipe($_POST["work_category_ids"]));
+			$db->addfield("address");			$db->addvalue($_POST["address"]);
+			$db->addfield("pic");				$db->addvalue($_POST["pic"]);
+			$db->addfield("pic_position");		$db->addvalue($_POST["pic_position"]);
+			$db->addfield("value_of_capital");	$db->addvalue($_POST["value_of_capital"]);
+			$db->addfield("types_of_goods");	$db->addvalue($_POST["types_of_goods"]);
+			$db->addfield("siup_category");		$db->addvalue($_POST["siup_category"]);
+			$db->addfield("siup_validity");		$db->addvalue($_POST["siup_validity"]);
+			$db->addfield("npwp");				$db->addvalue($_POST["npwp"]);
+			$db->addfield("updated_at");		$db->addvalue(date("Y-m-d H:i:s"));
+			$db->addfield("updated_by");		$db->addvalue($__username);
+			$db->addfield("updated_ip");		$db->addvalue($_SERVER["REMOTE_ADDR"]);
+			$inserting = $db->insert();
+			if($inserting["affected_rows"] >= 0){
+				$supplier_id = $inserting["insert_id"];
+				foreach($_FILES["scan_file"]["tmp_name"] as $key => $tmp_name){
+					if($tmp_name){
+						$_ext = strtolower(pathinfo($_FILES['scan_file']['name'][$key],PATHINFO_EXTENSION));
+						$file_type = $_POST["file_type"][$key];
+						$softcopy_name = $file_type."_".$supplier_id."_".$key.".".$_ext;
+						move_uploaded_file($tmp_name,"supplier_files/".$softcopy_name);
+						$db->addtable("supplier_files");
+						$db->addfield("supplier_id");	$db->addvalue($supplier_id);
+						$db->addfield("file_type");		$db->addvalue($file_type);
+						$db->addfield("filename");		$db->addvalue($softcopy_name);
+						$db->insert();
+					}
+				}
+				javascript("alert('Data Saved');");
+				javascript("window.location='".str_replace("_add","_list",$_SERVER["PHP_SELF"])."';");
+			} else {
+				javascript("alert('Saving data failed');");
+			}
 		}
 	}
 	
