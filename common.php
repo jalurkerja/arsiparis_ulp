@@ -55,18 +55,32 @@
 		$group_id = $__group_id;
 		$is_allowed = true;
 		$file_pattern = "";
+		$file_pattern_referer = "";
 		if(strpos($filename,"_") > 0){
 			$temp = explode("_",pathinfo($filename, PATHINFO_FILENAME));
 			for($xx=0;$xx<count($temp)-1;$xx++){ $file_pattern .= $temp[$xx]."_"; }
 			$file_pattern .= "%.".pathinfo($filename, PATHINFO_EXTENSION);
+			
+			$temp = explode("_",pathinfo($_SERVER["HTTP_REFERER"], PATHINFO_FILENAME));
+			for($xx=0;$xx<count($temp)-1;$xx++){ $file_pattern_referer .= $temp[$xx]."_"; }
+			$file_pattern_referer .= "%.".pathinfo($_SERVER["HTTP_REFERER"], PATHINFO_EXTENSION);
+			$file_pattern_referer = substr($file_pattern_referer,0,strpos($file_pattern_referer,"?"));
 		} else { $file_pattern = $filename; }
 		
 		$selected_menu_id = $db->fetch_single_data("backoffice_menu","id",array("url" => $file_pattern.":LIKE"));
+		$selected_menu_id_referer = $db->fetch_single_data("backoffice_menu","id",array("url" => $file_pattern_referer.":LIKE"));
+		
 		if($user_id != 1 && $db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id)) == 0)
 			$is_allowed = false;
 		
 		if($access_mode == "write" && $user_id != 1 && $db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id)) < 2 )
 			$is_allowed = false;
+		
+		if(!$is_allowed){//exeptions
+			if($db->fetch_single_data("backoffice_menu_privileges","privilege",array("group_id" => $group_id,"backoffice_menu_id" => $selected_menu_id_referer)) > 0)
+				$is_allowed = true;
+		}
+		
 			
 		return $is_allowed;
 	}
